@@ -1,0 +1,201 @@
+id,rung,query_type,correct,status,graph_source,gold_expression,gold_canonical,raw_formalizer_output,pred_canonical,exact_match,verified_match,verification_method,proof,note
+30285,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} | V1=0,Y_{X=0}|V1=0,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+19428,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+9819,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=0","Y_{X=1}|V1=0,V2=1","Expression: Y_{X=1} = 1 | V2=1, V1=0","Y_{X=1}|V1=0,V2=1",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+23576,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=0}} - Y_{X=0}]","[Y_{V2=V2_{X=0},X=1}]-[Y_{X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+29306,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+23320,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+26349,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X = 1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+23325,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=V3_{X=0}} - Y_{X=0, V3=V3_{X=0}}]","[Y_{V3=V3_{X=0},X=1}]-[Y_{V3=V3_{X=0},X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+28462,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+17005,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+10710,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+20555,3,det-counterfactual,True,ok,row_reasoning,Y_{X=1} = 0 | V1=1,Y_{X=1}=0|V1=1,Expression: Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+21104,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+23624,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | X),[P(Y|X)]-[P(Y|X)],False,False,docalculus,,contrast vs single-query mismatch
+1855,2,backadj,False,ok,graph_id_fallback(IV),[backdoor adjustment set for Y given X],P([backdoor adjustment set for Y given X]),Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],False,False,docalculus,,contrast vs single-query mismatch
+30942,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+5122,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29847,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+8778,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X = 1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+27984,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,L:[identity] R:[identity],
+26575,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,L:[identity] R:[identity],
+30998,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1 = 0,Y_{X=0}=0|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+19963,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+25972,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29824,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | ,Y_{X=0},Expression: Y_{X=0},Y_{X=0},True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+11273,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y | X),P(Y|X),False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+12363,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+11390,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+5861,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+21864,2,ate,False,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,L:[identity] R:[identity],
+24056,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+29917,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 0 | ,Y_{X=0}=0,Expression: Y_{X=0} | X,Y_{X=0}|X,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+30356,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} = Y_{X=1} | V1,Y_{X=0}=Y_{X=1}|V1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+19415,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X)] - E[Y | do(X)],[P(Y|do(X))]-[P(Y|do(X))],False,False,docalculus,,left side of contrast not derivable
+19710,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+28441,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+1455,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+16312,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+23197,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+11053,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y | X),P(Y|X),False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+23227,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+364,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+382,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+29758,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29724,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,Expression: Y_{X=0} | V2,Y_{X=0}|V2,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+28392,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X = 1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+29704,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+4217,2,backadj,False,ok,graph_id_fallback(frontdoor),[backdoor adjustment set for Y given X],P([backdoor adjustment set for Y given X]),Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],False,False,docalculus,,contrast vs single-query mismatch
+21294,2,collider_bias,False,ok,row_reasoning,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]","[P(Y|do(X=1),V3=1)]-[P(Y|do(X=0),V3=1)]","Expression: P(Y | X, V3)","P(Y|V3,X)",False,False,docalculus,,contrast vs single-query mismatch
+14333,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+28896,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+13585,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+6051,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+9795,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=0","Y_{X=1}|V1=0,V2=1","Expression: Y_{X=1} = 1 | V2=1, V1=0","Y_{X=1}|V1=0,V2=1",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+23264,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+29985,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+20494,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,Expression: Y_{X} | V1,Y_{X}|V1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+22318,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+30426,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29674,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V2=0,Y_{X=1}|V2=0,Expression: Y_{X=1} | V2=0,Y_{X=1}|V2=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+5312,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+1639,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+12737,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29984,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=0,Y_{X=0}|V1=0,Expression: Y_{X=0} | V1=0,Y_{X=0}|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+2387,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+10997,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+30769,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 0 | ,Y_{X=0}=0,Expression: Y_{X=0} = 0,Y_{X=0}=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+26735,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+2310,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+25885,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+3187,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+3994,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+25585,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+8549,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+30132,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=0,Y_{X=0}|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+30766,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} | V1=1,Y_{X=0}|V1=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+30671,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=0} = 0 | V2=1, V1=1","Y_{X=0}=0|V1=1,V2=1","Expression: Y_{X=0} = 0 | V1=1, V2=1","Y_{X=0}=0|V1=1,V2=1",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+27554,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+16464,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+18636,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+20012,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V2=0,Y_{X=1}|V2=0,Expression: Y_{X=1} = 1 | V2=0,Y_{X=1}|V2=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+21671,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+29818,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,Expression: Y_{X=0} = 1 | X=1,Y_{X=0}|X=1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+20772,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=0} = 1 | V2=1, V1=1","Y_{X=0}|V1=1,V2=1",Expression: Y_{X=0} = 1,Y_{X=0},False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+3700,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],"Expression: E[Y | do(X = 1), V1] - E[Y | do(X = 0), V1]","[P(Y|do(X=1),V1)]-[P(Y|do(X=0),V1)]",False,False,docalculus,,left side of contrast not derivable
+13122,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+2929,2,backadj,True,ok,graph_id_fallback(arrowhead),[backdoor adjustment set for Y given X],P([backdoor adjustment set for Y given X]),Expression: P(Y | X),P(Y|X),False,False,docalculus,,
+1859,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,L:[identity] R:[identity],
+19967,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} = 1 | X=1,Y_{X=0}|X=1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+30275,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,Expression: Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+30492,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 1 | ,Y_{X=0},Expression: Y_{X=0},Y_{X=0},True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+3811,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | X),[P(Y|X)]-[P(Y|X)],False,False,docalculus,,contrast vs single-query mismatch
+1289,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X = 1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+10018,3,det-counterfactual,False,ok,row_reasoning,"Y_{X=0} = 0 | V2=0, V1=1","Y_{X=0}=0|V1=1,V2=0","Expression: Y_{X=0} = 0 | X=1, V1=1","Y_{X=0}=0|V1=1,X=1",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+1305,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y | X),P(Y|X),False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+19976,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,Expression: Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29777,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} = 1 | X=1,Y_{X=0}|X=1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+16113,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | X),[P(Y|X)]-[P(Y|X)],False,False,docalculus,,contrast vs single-query mismatch
+14708,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+22926,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+29087,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+25118,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,L:[identity] R:[identity],
+21442,2,backadj,True,ok,graph_id_fallback(frontdoor),[backdoor adjustment set for Y given X],P([backdoor adjustment set for Y given X]),Expression: P(Y | do(X)),P(Y|do(X)),False,False,docalculus,,
+28841,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1,V2} - Y_{X=0,V2}]","[Y_{V2,X=1}]-[Y_{V2,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+27645,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+7660,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+11539,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=0}} - Y_{X=0}]","[Y_{V2=V2_{X=0},X=1}]-[Y_{X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+18854,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+4325,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+20203,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=1","Y_{X=1}|V1=1,V2=1","Expression: Y_{X=1} = 1 | V1=1, V2=1","Y_{X=1}|V1=1,V2=1",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+24668,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+1105,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+13069,1,exp_away,True,ok,row_reasoning,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)","[P(P(Y=1 | X = 1, V3 = 1])]-[P(Y|V3=1)]","Expression: P(Y | X, V3) - P(Y | X, V3)","[P(Y|V3,X)]-[P(Y|V3,X)]",False,False,docalculus,,left side of contrast not derivable
+29645,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 1 | X=0,Y_{X=1}|X=0,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+5743,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | X),[P(Y|X)]-[P(Y|X)],False,False,docalculus,,contrast vs single-query mismatch
+17673,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+29604,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,Expression: Y_{X} | V1,Y_{X}|V1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+7519,1,exp_away,False,ok,row_reasoning,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)","[P(P(Y=1 | X = 1, V3 = 1])]-[P(Y|V3=1)]","Expression: P(Y | X, V3) - P(Y | X, V3)","[P(Y|V3,X)]-[P(Y|V3,X)]",False,False,docalculus,,left side of contrast not derivable
+11516,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+13813,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+15494,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+18797,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+30562,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+22159,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+19236,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=v} - Y_{X=0, V3=v}]","[Y_{V3=v,X=1}]-[Y_{V3=v,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+30688,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | ,Y_{X=0},Expression: Y_{X=0},Y_{X=0},True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+24059,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ~X),[P(Y|X)]-[P(Y|~X)],False,False,docalculus,,contrast vs single-query mismatch
+308,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+30499,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} | X=1,Y_{X=0}|X=1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+23824,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+30716,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} | V1=0,Y_{X=1}|V1=0,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+1266,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+2970,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=V3_{X=0}} - Y_{X=0, V3=V3_{X=0}}]","[Y_{V3=V3_{X=0},X=1}]-[Y_{V3=V3_{X=0},X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+8569,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+13216,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3} - Y_{X=0, V3}]","[Y_{V3,X=1}]-[Y_{V3,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+8124,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+5902,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+27259,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+6223,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y | do(X=1), V2] - E[Y | do(X=0), V2]","[P(Y|do(X=1),V2)]-[P(Y|do(X=0),V2)]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+13560,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X = 1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+1186,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y | X),P(Y|X),False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+3998,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+16444,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y | X] - E[Y | X],[P(Y|X)]-[P(Y|X)],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+10364,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=0, V1=1","Y_{X=1}|V1=1,V2=0","Expression: Y_{X=1} = 1 | V2=0, V1=1","Y_{X=1}|V1=1,V2=0",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+23642,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+6629,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+26602,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X = 1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+23654,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X = 1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+11517,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29949,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=1","Y_{X=1}|V1=1,V2=1","Expression: Y_{X=1} = 1 | V1=1, V2=1","Y_{X=1}|V1=1,V2=1",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+8488,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+12170,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+2318,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=v} - Y_{X=0, V3=v}]","[Y_{V3=v,X=1}]-[Y_{V3=v,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+10685,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+30860,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+9554,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 1 | V1=0,Y_{X=0}|V1=0,Expression: Y_{X=0} | X=1,Y_{X=0}|X=1,False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+29302,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=1}} - Y_{X=1, V2=V2_{X=0}}]","[Y_{V2=V2_{X=1},X=1}]-[Y_{V2=V2_{X=0},X=1}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+29988,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,Expression: Y_{X=1} | V1=0,Y_{X=1}|V1=0,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+30436,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,Expression: Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+19446,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+15810,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+2166,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+3954,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+16395,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y | X),P(Y|X),False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+2618,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+5953,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+5814,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+22031,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+16385,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+10515,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+20883,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+16351,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+21002,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+22320,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+25642,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ~X),[P(Y|X)]-[P(Y|~X)],False,False,docalculus,,contrast vs single-query mismatch
+26009,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | ¬X),[P(Y|X)]-[P(Y|¬X)],False,False,docalculus,,contrast vs single-query mismatch
+29543,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,canonical,,potential-outcome expression; not do-calculus verifiable
+7428,1,exp_away,True,ok,row_reasoning,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)","[P(P(Y=1 | X = 1, V3 = 1])]-[P(Y|V3=1)]","Expression: P(Y | X, V3) - P(Y | X, V3)","[P(Y|V3,X)]-[P(Y|V3,X)]",False,False,docalculus,,left side of contrast not derivable
+351,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+7605,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+24624,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+21795,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | X = 0),[P(Y|X)]-[P(Y|X=0)],False,False,docalculus,,contrast vs single-query mismatch
+30075,3,det-counterfactual,True,ok,row_reasoning,Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,Expression: Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+25888,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+10756,3,ett,True,formalize_error,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],,,,,,,'NoneType' object has no attribute 'strip'
+15917,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+8662,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+2277,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+3911,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+24931,1,correlation,True,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | X),[P(Y|X)]-[P(Y|X)],False,False,docalculus,,contrast vs single-query mismatch
+14635,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+29798,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 0 | V2=1, V1=0","Y_{X=1}=0|V1=0,V2=1","Expression: Y_{X=1} = 0 | V2=1, V1=0","Y_{X=1}=0|V1=0,V2=1",True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+11867,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+5081,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+5570,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X),P(Y|X),True,True,docalculus,identity,
+11012,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,identity,
+26676,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+5114,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,canonical,,potential-outcome expression; not do-calculus verifiable
+29051,1,correlation,False,ok,row_reasoning,P(Y | X),P(Y|X),Expression: P(Y | X) - P(Y | X),[P(Y|X)]-[P(Y|X)],False,False,docalculus,,contrast vs single-query mismatch
+21418,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,L:[identity] R:[identity],

@@ -1,0 +1,201 @@
+id,rung,query_type,correct,status,graph_source,gold_expression,gold_canonical,raw_formalizer_output,pred_canonical,exact_match,verified_match,verification_method,relation,proof,note
+30285,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,True,True,scm-enumeration,equivalent,,
+19428,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+9819,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=0","Y_{X=1}|V1=0,V2=1","Expression: Y_{X=1} = 0 | V2=1, V1=0","Y_{X=1}=0|V1=0,V2=1",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.037936 psi=0.962064
+23576,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]",Expression: E[Y_{V2=1} - Y_{V2=0}],[Y_{V2=1}]-[Y_{V2=0}],False,False,scm-enumeration,not-equivalent,,counterexample: phi=-0.478565 psi=-0.568948
+29306,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1,V2=V2_{X=0}}] - E[Y_{X=0,V2=V2_{X=0}}]","[Y_{V2=V2_{X=0},X=1}]-[Y_{V2=V2_{X=0},X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.462512 psi=-0.568948
+23320,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,scm-enumeration,equivalent,,
+26349,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.540869 psi=0.540869
+23325,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]",Expression: E[Y_{V3=1} - Y_{V3=0} | X=1],[Y_{V3=1}|X=1]-[Y_{V3=0}|X=1],False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.002116
+28462,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+17005,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+10710,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+20555,3,det-counterfactual,True,ok,row_reasoning,Y_{X=1} = 0 | V1=1,Y_{X=1}=0|V1=1,Expression: Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.568948 psi=0.431052
+21104,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.002116
+23624,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X) - P(Y | X=0),[P(Y|X)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+1855,2,backadj,False,not_an_expression_task,graph_id_fallback(IV),[backdoor adjustment set for Y given X],,,,,,,,,
+30942,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.377618 psi=0.622382
+5122,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+29847,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,True,True,scm-enumeration,equivalent,,
+8778,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,scm-enumeration,sign-flipped,,counterexample: phi=0.201534 psi=-0.201534
+27984,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
+26575,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
+30998,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,True,True,scm-enumeration,equivalent,,
+19963,3,det-counterfactual,False,formalize_error,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,,,,,,,,'NoneType' object has no attribute 'strip'
+25972,3,ett,True,formalize_error,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],,,,,,,,'NoneType' object has no attribute 'strip'
+29824,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | ,Y_{X=0},Expression: Y_{X=0} = 0,Y_{X=0}=0,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.748667 psi=0.251333
+11273,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y=1 | X=0) - P(Y=1 | X=1),[P(Y|X=0)]-[P(Y|X=1)],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.687983 psi=0.687983
+12363,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+11390,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.614239 psi=0.0
+5861,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,scm-enumeration,equivalent,,
+21864,2,ate,False,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
+24056,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X) - P(Y | X=0),[P(Y|X)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+29917,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 0 | ,Y_{X=0}=0,Expression: Y_{X=0} = 0 | X=1,Y_{X=0}=0|X=1,False,True,scm-enumeration,equivalent,,
+30356,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.640109 psi=0.359891
+19415,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
+19710,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+28441,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+1455,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,scm-enumeration,equivalent,,
+16312,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,scm-enumeration,equivalent,,
+23197,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.462648
+11053,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+23227,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+364,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+382,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.460789 psi=0.447836
+29758,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,True,True,scm-enumeration,equivalent,,
+29724,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,Expression: Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,True,True,scm-enumeration,equivalent,,
+28392,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.169635 psi=0.169635
+29704,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,True,True,scm-enumeration,equivalent,,
+4217,2,backadj,False,not_an_expression_task,graph_id_fallback(frontdoor),[backdoor adjustment set for Y given X],,,,,,,,,
+21294,2,collider_bias,False,ok,row_reasoning,"E[Y = 1 | do(X = 1), V3 = 1] - E[Y = 1 | do(X = 0), V3 = 1]","[P(Y|do(X=1),V3=1)]-[P(Y|do(X=0),V3=1)]","Expression: P(Y | X, V3)","P(Y|V3,X)",False,False,scm-enumeration,not-equivalent,,counterexample: phi=1.0 psi=0.0
+14333,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+28896,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X) - P(Y | X=0),[P(Y|X)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+13585,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.303296 psi=-0.0
+6051,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+9795,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=0","Y_{X=1}|V1=0,V2=1","Expression: Y_{X=1} = 0 | V2=1, V1=0","Y_{X=1}=0|V1=0,V2=1",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.037936 psi=0.962064
+23264,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y|X=1) - P(Y|X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+29985,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,True,True,scm-enumeration,equivalent,,
+20494,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,Expression: Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,True,True,scm-enumeration,equivalent,,
+22318,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X) - P(Y | X=0),[P(Y|X)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+30426,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,True,True,scm-enumeration,equivalent,,
+29674,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V2=0,Y_{X=1}|V2=0,Expression: Y_{X=1} = 1 | V2=0,Y_{X=1}|V2=0,True,True,scm-enumeration,equivalent,,
+5312,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+1639,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+12737,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,scm-enumeration,equivalent,,
+29984,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=0,Y_{X=0}|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.879038 psi=0.120962
+2387,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+10997,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+30769,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 0 | ,Y_{X=0}=0,Expression: Y_{X=0} = 0,Y_{X=0}=0,True,True,scm-enumeration,equivalent,,
+26735,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+2310,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+25885,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+3187,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,scm-enumeration,equivalent,,
+3994,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+25585,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+8549,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+30132,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=0,Y_{X=0}|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.879038 psi=0.120962
+30766,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,True,True,scm-enumeration,equivalent,,
+30671,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=0} = 0 | V2=1, V1=1","Y_{X=0}=0|V1=1,V2=1","Expression: Y_{X=0} = 0 | V1=1, V2=1","Y_{X=0}=0|V1=1,V2=1",True,True,scm-enumeration,equivalent,,
+27554,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.462648
+16464,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+18636,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+20012,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V2=0,Y_{X=1}|V2=0,"Expression: Y_{X=1, V2=0} = 1 | V2=0","Y_{V2=0,X=1}|V2=0",False,True,scm-enumeration,equivalent,,
+21671,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+29818,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,Expression: Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,True,True,scm-enumeration,equivalent,,
+20772,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=0} = 1 | V2=1, V1=1","Y_{X=0}|V1=1,V2=1","Expression: Y_{X=0} = 1 | V2=1, V1=1","Y_{X=0}|V1=1,V2=1",True,True,scm-enumeration,equivalent,,
+3700,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
+13122,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+2929,2,backadj,True,not_an_expression_task,graph_id_fallback(arrowhead),[backdoor adjustment set for Y given X],,,,,,,,,
+1859,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
+19967,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.48121 psi=0.51879
+30275,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,Expression: Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,True,True,scm-enumeration,equivalent,,
+30492,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 1 | ,Y_{X=0},Expression: Y_{X=0} = 0,Y_{X=0}=0,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.560852 psi=0.439148
+3811,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+1289,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.540869 psi=0.540869
+10018,3,det-counterfactual,False,ok,row_reasoning,"Y_{X=0} = 0 | V2=0, V1=1","Y_{X=0}=0|V1=1,V2=0",Expression: Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,False,True,scm-enumeration,equivalent,,
+1305,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} | X=1] - E[Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+19976,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,Expression: Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,True,True,scm-enumeration,equivalent,,
+29777,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,True,True,scm-enumeration,equivalent,,
+16113,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=0) - P(Y | X=1),[P(Y|X=0)]-[P(Y|X=1)],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.687983 psi=0.687983
+14708,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,scm-enumeration,equivalent,,
+22926,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+29087,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.447836 psi=0.447836
+25118,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
+21442,2,backadj,True,not_an_expression_task,graph_id_fallback(frontdoor),[backdoor adjustment set for Y given X],,,,,,,,,
+28841,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=1} - Y_{X=1, V2=0}]","[Y_{V2=1,X=1}]-[Y_{V2=0,X=1}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=-0.431052 psi=-0.568948
+27645,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+7660,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+11539,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=0}} - Y_{X=0, V2=V2_{X=0}}]","[Y_{V2=V2_{X=0},X=1}]-[Y_{V2=V2_{X=0},X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.462512 psi=-0.568948
+18854,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+4325,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=V3_{X=1}} - Y_{X=0, V3=V3_{X=0}}]","[Y_{V3=V3_{X=1},X=1}]-[Y_{V3=V3_{X=0},X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.002116
+20203,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=1","Y_{X=1}|V1=1,V2=1","Expression: Y_{X=1} = 1 | V2=1, V1=1","Y_{X=1}|V1=1,V2=1",True,True,scm-enumeration,equivalent,,
+24668,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+1105,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.431052 psi=-0.568948
+13069,1,exp_away,True,gold_malformed,row_reasoning,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",,,,,,,,,
+29645,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,True,True,scm-enumeration,equivalent,,
+5743,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y=1 | X=1) - P(Y=1 | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+17673,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+29604,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,Expression: Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,True,True,scm-enumeration,equivalent,,
+7519,1,exp_away,False,gold_malformed,row_reasoning,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",,,,,,,,,
+11516,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=1}} - Y_{X=0, V2=V2_{X=0}}]","[Y_{V2=V2_{X=1},X=1}]-[Y_{V2=V2_{X=0},X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.169635 psi=-0.568948
+13813,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.670168 psi=0.309087
+15494,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+18797,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+30562,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,True,True,scm-enumeration,equivalent,,
+22159,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.670168 psi=0.309087
+19236,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=v} - Y_{X=0, V3=v}]","[Y_{V3=v,X=1}]-[Y_{V3=v,X=0}]",False,False,canonical,unparsed,,SCM check unavailable; fell back to string compare
+30688,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | ,Y_{X=0},Expression: Y_{X=0} = 1,Y_{X=0},True,True,scm-enumeration,equivalent,,
+24059,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X) - P(Y | X=0),[P(Y|X)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+308,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+30499,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 0 | V1=1,Y_{X=0}=0|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.640109 psi=0.359891
+23824,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+30716,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,Expression: Y_{X=1} = 0 | V1=0,Y_{X=1}=0|V1=0,True,True,scm-enumeration,equivalent,,
+1266,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+2970,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=V3_{X=0}} - Y_{X=0, V3=V3_{X=0}}]","[Y_{V3=V3_{X=0},X=1}]-[Y_{V3=V3_{X=0},X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.002116
+8569,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+13216,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1,M=1} - Y_{X=1,M=0}]","[Y_{M=1,X=1}]-[Y_{M=0,X=1}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.002116
+8124,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+5902,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,scm-enumeration,equivalent,,
+27259,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+6223,3,nde,True,formalize_error,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",,,,,,,,'NoneType' object has no attribute 'strip'
+13560,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,scm-enumeration,sign-flipped,,counterexample: phi=0.201534 psi=-0.201534
+1186,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+3998,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+16444,3,ett,False,formalize_error,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],,,,,,,,'NoneType' object has no attribute 'strip'
+10364,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=0, V1=1","Y_{X=1}|V1=1,V2=0","Expression: Y_{X=1} = 1 | V2=local, V1=high","Y_{X=1}|V1=high,V2=local",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.426573 psi=0.593595
+23642,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.781098 psi=0.551241
+6629,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y=1 | X=0) - P(Y=1 | X=1),[P(Y|X=0)]-[P(Y|X=1)],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.106554 psi=0.106554
+26602,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+23654,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1}] - E[Y_{X=0} | X = 1],[Y_{X=1}]-[Y_{X=0}|X=1],False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.095703 psi=0.19978
+11517,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,scm-enumeration,equivalent,,
+29949,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 1 | V2=1, V1=1","Y_{X=1}|V1=1,V2=1","Expression: Y_{X=1} = 1 | V2=1, V1=1","Y_{X=1}|V1=1,V2=1",True,True,scm-enumeration,equivalent,,
+8488,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+12170,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+2318,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=1} - Y_{X=0, V3=1}]","[Y_{V3=1,X=1}]-[Y_{V3=1,X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=-0.002116 psi=0.0
+10685,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+30860,3,det-counterfactual,False,ok,row_reasoning,Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,Expression: Y_{X=0} = 1 | V1=1,Y_{X=0}|V1=1,True,True,scm-enumeration,equivalent,,
+9554,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 1 | V1=0,Y_{X=0}|V1=0,Expression: Y_{X=0} = 0 | V1=0,Y_{X=0}=0|V1=0,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.879038 psi=0.120962
+29302,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=1}} - Y_{X=0, V2=V2_{X=0}}]","[Y_{V2=V2_{X=1},X=1}]-[Y_{V2=V2_{X=0},X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.169635 psi=-0.568948
+29988,3,det-counterfactual,False,ok,row_reasoning,Y_{X=1} = 1 | V1=0,Y_{X=1}|V1=0,Expression: Y_{X=1} | V1=0,Y_{X=1}|V1=0,True,True,scm-enumeration,equivalent,,
+30436,3,det-counterfactual,True,ok,row_reasoning,Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,Expression: Y_{X=0} = 1 | V2=1,Y_{X=0}|V2=1,True,True,scm-enumeration,equivalent,,
+19446,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=v}] - E[Y_{X=0, V3=v}] where V3=v is set to Y_{X=0}'s natural smoking distribution","[Y_{V3=v,X=1}]-[P(E[Y_{X=0, V3=v}] where V3=v is set to Y_{X=0}'s natural smoking distribution)]",False,False,canonical,unparsed,,SCM check unavailable; fell back to string compare
+15810,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y=1 | X=1) - P(Y=1 | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+2166,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=0}}] - E[Y_{X=0}]","[Y_{V2=V2_{X=0},X=1}]-[Y_{X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.462512 psi=0.431052
+3954,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+16395,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+2618,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+5953,3,nie,False,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=V2_{X=0}} - Y_{X=0}]","[Y_{V2=V2_{X=0},X=1}]-[Y_{X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.462512 psi=-0.568948
+5814,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.614239 psi=0.0
+22031,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+16385,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+10515,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V2=1} - Y_{X=0, V2=0}]","[Y_{V2=1,X=0}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.431052 psi=-0.568948
+20883,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+16351,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,scm-enumeration,equivalent,,
+21002,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+22320,3,nie,True,ok,row_reasoning,"E[Y_{X=0, V3=1} - Y_{X=0, V3=0}]","[Y_{V3=1,X=0}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.0 psi=0.462648
+25642,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+26009,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+29543,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+7428,1,exp_away,True,gold_malformed,row_reasoning,"P(Y = 1 | X = 1, V3 = 1] - P(Y = 1 | V3 = 1)",,,,,,,,,
+351,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=0} - Y_{X=1} | X=1],[Y_{X=0}|X=1]-[Y_{X=1}|X=1],False,False,scm-enumeration,sign-flipped,,counterexample: phi=-0.447836 psi=0.447836
+7605,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.303296 psi=-0.0
+24624,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+21795,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X) - P(Y | X=0),[P(Y|X)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+30075,3,det-counterfactual,True,ok,row_reasoning,Y_{X=1} = 1 | V1=1,Y_{X=1}|V1=1,Expression: Y_{X=1} = 0 | V1=1,Y_{X=1}=0|V1=1,False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.165584 psi=0.834416
+25888,3,nde,False,ok,row_reasoning,"E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]","Expression: E[Y_{X=1, V3=0} - Y_{X=0, V3=0}]","[Y_{V3=0,X=1}]-[Y_{V3=0,X=0}]",True,True,scm-enumeration,equivalent,,
+10756,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y | do(X=1)] - E[Y | do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.460789 psi=0.447836
+15917,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+8662,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+2277,3,nde,True,ok,row_reasoning,"E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]","Expression: E[Y_{X=1, V2=0} - Y_{X=0, V2=0}]","[Y_{V2=0,X=1}]-[Y_{V2=0,X=0}]",True,True,scm-enumeration,equivalent,,
+3911,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+24931,1,correlation,True,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X=1) - P(Y | X=0),[P(Y|X=1)]-[P(Y|X=0)],True,True,docalculus,equivalent,L:[identity] R:[identity],
+14635,1,marginal,False,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+29798,3,det-counterfactual,True,ok,row_reasoning,"Y_{X=1} = 0 | V2=1, V1=0","Y_{X=1}=0|V1=0,V2=1","Expression: Y_{X=1} = 0 | V2=1, V1=0","Y_{X=1}=0|V1=0,V2=1",True,True,scm-enumeration,equivalent,,
+11867,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.608783 psi=0.169635
+5081,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+5570,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X),P(Y|X),False,False,scm-enumeration,not-equivalent,,counterexample: phi=0.614239 psi=0.0
+11012,1,marginal,True,ok,row_reasoning,P(Y),P(Y),Expression: P(Y),P(Y),True,True,docalculus,equivalent,identity,
+26676,3,ett,True,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+5114,3,ett,False,ok,row_reasoning,E[Y_{X = 1} - Y_{X = 0} | X = 1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],Expression: E[Y_{X=1} - Y_{X=0} | X=1],[Y_{X=1}|X=1]-[Y_{X=0}|X=1],True,True,scm-enumeration,equivalent,,
+29051,1,correlation,False,ok,row_reasoning,P(Y | X = 1) - P(Y | X = 0),[P(Y|X=1)]-[P(Y|X=0)],Expression: P(Y | X) - P(Y | X=0),[P(Y|X)]-[P(Y|X=0)],False,True,scm-enumeration,equivalent,,
+21418,2,ate,True,ok,row_reasoning,E[Y | do(X = 1)] - E[Y | do(X = 0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],Expression: E[Y|do(X=1)] - E[Y|do(X=0)],[P(Y|do(X=1))]-[P(Y|do(X=0))],True,True,docalculus,equivalent,L:[identity] R:[identity],
