@@ -1,0 +1,972 @@
+{
+  "archive": [
+    [
+      "Opus 4.8",
+      "Baseline",
+      9235,
+      10105,
+      "Near-full historical archive"
+    ],
+    [
+      "Sonnet 4.6",
+      "Baseline",
+      9204,
+      10102,
+      "Near-full historical archive"
+    ],
+    [
+      "Gemini 2.5 Flash",
+      "Baseline",
+      8626,
+      10097,
+      "Near-full historical archive"
+    ],
+    [
+      "GPT-5.4 Nano",
+      "Baseline",
+      5539,
+      10108,
+      "Near-full historical archive"
+    ],
+    [
+      "GPT-5.5",
+      "Baseline",
+      5482,
+      5765,
+      "Partial: 57.01% of canonical items"
+    ],
+    [
+      "Opus 4.8",
+      "Selected forced-thinking rerun",
+      4157,
+      4607,
+      "Selected IDs with empty original reasoning fields"
+    ],
+    [
+      "Kimi K3",
+      "Direct",
+      9566,
+      10112,
+      "Full paired archive"
+    ],
+    [
+      "Kimi K3",
+      "CausalCoT",
+      9537,
+      10112,
+      "Same 10,112 IDs"
+    ],
+    [
+      "OpenRouter archive — underlying model unidentified",
+      "Direct",
+      9573,
+      10112,
+      "Full paired V1 archive"
+    ],
+    [
+      "OpenRouter archive — underlying model unidentified",
+      "CausalCoT",
+      9591,
+      10112,
+      "Same V1 IDs"
+    ],
+    [
+      "GPT-labelled pilot",
+      "Direct",
+      20,
+      20,
+      "Small separate pilot"
+    ],
+    [
+      "GPT-labelled pilot",
+      "CausalCoT",
+      20,
+      20,
+      "Same 20 pilot IDs"
+    ]
+  ],
+  "controls": [
+    [
+      "Opus baseline",
+      4355,
+      4566
+    ],
+    [
+      "Opus selected rerun",
+      2122,
+      2296
+    ],
+    [
+      "Sonnet baseline",
+      4513,
+      4564
+    ],
+    [
+      "Gemini baseline",
+      4462,
+      4560
+    ],
+    [
+      "Nano baseline",
+      2657,
+      4565
+    ],
+    [
+      "GPT-5.5 partial baseline",
+      2687,
+      2691
+    ],
+    [
+      "Kimi direct",
+      4537,
+      4567
+    ],
+    [
+      "Kimi CausalCoT",
+      4549,
+      4567
+    ],
+    [
+      "OpenRouter direct",
+      4458,
+      4567
+    ],
+    [
+      "OpenRouter CausalCoT",
+      4488,
+      4567
+    ],
+    [
+      "GPT pilot direct",
+      10,
+      10
+    ],
+    [
+      "GPT pilot CausalCoT",
+      10,
+      10
+    ]
+  ],
+  "controlled_baseline": [
+    [
+      "Opus 4.8",
+      288,
+      288
+    ],
+    [
+      "GPT-5.5",
+      288,
+      288
+    ],
+    [
+      "Kimi K3",
+      287,
+      288
+    ],
+    [
+      "Sonnet 4.6",
+      286,
+      288
+    ],
+    [
+      "Nano",
+      277,
+      288
+    ],
+    [
+      "Gemini",
+      190,
+      288
+    ]
+  ],
+  "contract": [
+    [
+      "Opus",
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      95,
+      95
+    ],
+    [
+      "Sonnet",
+      95,
+      95,
+      96,
+      78,
+      96,
+      74,
+      69,
+      88
+    ],
+    [
+      "Gemini",
+      66,
+      73,
+      35,
+      83,
+      84,
+      78,
+      10,
+      13
+    ],
+    [
+      "Kimi",
+      95,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      96
+    ],
+    [
+      "Nano",
+      93,
+      90,
+      89,
+      94,
+      94,
+      89,
+      80,
+      81
+    ],
+    [
+      "GPT-5.5",
+      96,
+      96,
+      96,
+      96,
+      96,
+      96,
+      95,
+      95
+    ]
+  ],
+  "public_initial_columns": [
+    "Original",
+    "Identical repeat",
+    "Rename",
+    "Reorder",
+    "Generic reasoning",
+    "Semantic bundle",
+    "Mechanism edit"
+  ],
+  "public_initial": [
+    [
+      "Opus",
+      30,
+      32,
+      30,
+      28,
+      31,
+      33,
+      33
+    ],
+    [
+      "Sonnet",
+      36,
+      36,
+      36,
+      36,
+      35,
+      36,
+      35
+    ],
+    [
+      "Gemini",
+      15,
+      14,
+      17,
+      12,
+      16,
+      21,
+      22
+    ],
+    [
+      "Kimi",
+      26,
+      26,
+      28,
+      22,
+      26,
+      32,
+      27
+    ],
+    [
+      "Nano",
+      19,
+      21,
+      22,
+      18,
+      23,
+      23,
+      17
+    ],
+    [
+      "GPT-5.5",
+      20,
+      23,
+      26,
+      26,
+      26,
+      36,
+      25
+    ]
+  ],
+  "public_followup_columns": [
+    "Original",
+    "Repeat",
+    "Generic reasoning",
+    "Target cue",
+    "Gate cue",
+    "Intervention cue",
+    "Complete-equation cue",
+    "Full bundle"
+  ],
+  "public_followup": [
+    [
+      "Opus",
+      35,
+      35,
+      35,
+      34,
+      36,
+      34,
+      35,
+      36
+    ],
+    [
+      "Sonnet",
+      35,
+      35,
+      36,
+      36,
+      34,
+      36,
+      36,
+      36
+    ],
+    [
+      "Gemini",
+      24,
+      20,
+      21,
+      23,
+      28,
+      27,
+      31,
+      30
+    ],
+    [
+      "Kimi",
+      29,
+      29,
+      30,
+      31,
+      34,
+      32,
+      36,
+      36
+    ],
+    [
+      "Nano",
+      25,
+      24,
+      26,
+      25,
+      33,
+      27,
+      32,
+      32
+    ],
+    [
+      "GPT-5.5",
+      27,
+      28,
+      30,
+      28,
+      35,
+      31,
+      35,
+      36
+    ]
+  ],
+  "local_assistance": [
+    [
+      "Raw question",
+      49,
+      192
+    ],
+    [
+      "Full execution tables",
+      64,
+      192
+    ],
+    [
+      "Eligible roots and proposition truth",
+      106,
+      192
+    ]
+  ],
+  "local_selection": [
+    [
+      "No membership or truth vector",
+      17,
+      48
+    ],
+    [
+      "Membership M only",
+      11,
+      48
+    ],
+    [
+      "Proposition truth T only",
+      23,
+      48
+    ],
+    [
+      "Both M and T",
+      22,
+      48
+    ]
+  ],
+  "local_context": [
+    [
+      "Full context",
+      53,
+      96
+    ],
+    [
+      "Minimal context",
+      49,
+      96
+    ]
+  ],
+  "local_projection": [
+    [
+      "Input columns retained",
+      53,
+      72
+    ],
+    [
+      "Input columns removed",
+      66,
+      72
+    ]
+  ],
+  "jinesis_fable": [
+    [
+      "First attempt",
+      9551,
+      9581,
+      30,
+      0.297,
+      "[+0.069, +0.524]",
+      0.0113146
+    ],
+    [
+      "Last non-retry",
+      9552,
+      9581,
+      29,
+      0.287,
+      "[+0.059, +0.514]",
+      0.0141179
+    ],
+    [
+      "Latest, including adaptive retries",
+      9555,
+      9593,
+      38,
+      0.376,
+      "[+0.168, +0.583]",
+      0.000597881
+    ]
+  ],
+  "content_match": [
+    [
+      "Structured execution before rebinding",
+      574,
+      603,
+      603,
+      "[93.18, 96.63]"
+    ],
+    [
+      "Structured execution after rebinding",
+      603,
+      603,
+      603,
+      "[99.37, 100.00]"
+    ],
+    [
+      "Always Yes",
+      290,
+      603,
+      603,
+      "[44.13, 52.08]"
+    ],
+    [
+      "Always No",
+      313,
+      603,
+      603,
+      "[47.92, 55.87]"
+    ],
+    [
+      "Action-value heuristic",
+      399,
+      603,
+      603,
+      "[62.30, 69.83]"
+    ],
+    [
+      "Opus archive",
+      520,
+      603,
+      600,
+      "[83.26, 88.76]"
+    ],
+    [
+      "Sonnet archive",
+      572,
+      603,
+      602,
+      "[92.80, 96.35]"
+    ],
+    [
+      "Gemini archive",
+      449,
+      603,
+      602,
+      "[70.83, 77.78]"
+    ],
+    [
+      "Nano archive",
+      314,
+      603,
+      603,
+      "[48.09, 56.03]"
+    ],
+    [
+      "Kimi direct",
+      532,
+      603,
+      603,
+      "[85.41, 90.56]"
+    ],
+    [
+      "Kimi CausalCoT",
+      505,
+      603,
+      603,
+      "[80.59, 86.48]"
+    ],
+    [
+      "Fable-labelled direct",
+      565,
+      603,
+      586,
+      "[91.47, 95.37]"
+    ],
+    [
+      "Fable-labelled CausalCoT",
+      565,
+      603,
+      586,
+      "[91.47, 95.37]"
+    ]
+  ],
+  "october": [
+    [
+      "Opus 5.5",
+      7151,
+      7361,
+      2751,
+      [
+        96.742,
+        97.504
+      ]
+    ],
+    [
+      "GPT-6.1 Sol",
+      6600,
+      6995,
+      3117,
+      [
+        93.787,
+        94.87
+      ]
+    ]
+  ],
+  "october_rungs": [
+    [
+      "Opus 5.5",
+      "Association",
+      2241,
+      2305
+    ],
+    [
+      "Opus 5.5",
+      "Intervention",
+      2266,
+      2276
+    ],
+    [
+      "Opus 5.5",
+      "Counterfactual",
+      2644,
+      2780
+    ],
+    [
+      "GPT-6.1 Sol",
+      "Association",
+      2122,
+      2188
+    ],
+    [
+      "GPT-6.1 Sol",
+      "Intervention",
+      2111,
+      2174
+    ],
+    [
+      "GPT-6.1 Sol",
+      "Counterfactual",
+      2367,
+      2633
+    ]
+  ],
+  "annotations": [
+    [
+      "Fully valid reasoning",
+      383,
+      420,
+      90.86,
+      null
+    ],
+    [
+      "Correct answer, some invalid reasoning",
+      37,
+      420,
+      9.14,
+      [
+        7.36,
+        10.97
+      ]
+    ],
+    [
+      "Correct answer unsupported by a valid argument",
+      29,
+      420,
+      7.38,
+      [
+        5.91,
+        9.0
+      ]
+    ],
+    [
+      "Valid supporting argument plus another invalid stage",
+      8,
+      420,
+      1.76,
+      null
+    ]
+  ],
+  "scorer_partition": [
+    [
+      "Historical positives also directed-positive",
+      8939
+    ],
+    [
+      "Parsed but directed-negative",
+      2885
+    ],
+    [
+      "Prediction cannot be parsed",
+      68
+    ],
+    [
+      "Reference target ineligible",
+      9
+    ]
+  ],
+  "scorer_modes": [
+    [
+      "Exact syntax tree",
+      1060,
+      300,
+      760,
+      0,
+      0,
+      100.0
+    ],
+    [
+      "Directed reference domain",
+      1060,
+      400,
+      660,
+      0,
+      0,
+      100.0
+    ],
+    [
+      "Symmetric domain",
+      1060,
+      380,
+      680,
+      0,
+      0,
+      100.0
+    ],
+    [
+      "Sign only",
+      1060,
+      440,
+      620,
+      0,
+      0,
+      100.0
+    ],
+    [
+      "Seven configurations",
+      1060,
+      450,
+      610,
+      90,
+      40,
+      87.74
+    ],
+    [
+      "512 configurations",
+      1060,
+      400,
+      660,
+      0,
+      0,
+      100.0
+    ],
+    [
+      "Historical gold-assisted mode",
+      1000,
+      460,
+      540,
+      100,
+      0,
+      90.0
+    ],
+    [
+      "Historical behavior proxy",
+      1040,
+      640,
+      400,
+      280,
+      0,
+      73.08
+    ],
+    [
+      "Directed rule judged against symmetric target",
+      1060,
+      400,
+      660,
+      20,
+      0,
+      98.11
+    ]
+  ],
+  "thesis_crossmodels": [
+    [
+      "Qwen2.5-7B base",
+      600,
+      53.0,
+      0.0,
+      null,
+      89.3
+    ],
+    [
+      "Qwen2.5-7B Instruct",
+      600,
+      55.7,
+      33.3,
+      93.0,
+      86.0
+    ],
+    [
+      "Llama3-8B Instruct",
+      600,
+      54.3,
+      73.7,
+      97.2,
+      75.6
+    ],
+    [
+      "Gemma2-9B IT",
+      600,
+      59.0,
+      48.5,
+      97.3,
+      89.6
+    ]
+  ],
+  "thesis_do": [
+    [
+      "2",
+      -0.034,
+      0.039
+    ],
+    [
+      "4",
+      -0.028,
+      0.047
+    ],
+    [
+      "8",
+      -0.068,
+      0.257
+    ]
+  ],
+  "metadata": {
+    "report_date": "2026-10-09",
+    "october_snapshot": "2026-10-09 17:55:30–17:55:32 Europe/Helsinki",
+    "percentages": "Percentages in generated tables are calculated from displayed integer counts unless explicitly source-reported.",
+    "scope": "Different archives, partial runs, formalizer checks, generated software tests, manuscript claims and selected annotation populations are kept separate.",
+    "model_names": "Recorded aliases; historical labels do not independently authenticate immutable model weights.",
+    "columns": {
+      "archive": [
+        "model",
+        "condition",
+        "correct",
+        "n",
+        "scope"
+      ],
+      "controls": [
+        "condition",
+        "correct",
+        "n"
+      ],
+      "controlled_baseline": [
+        "model",
+        "correct",
+        "n"
+      ],
+      "contract": [
+        "model",
+        "brief_correct",
+        "generic_correct",
+        "contract_declared_correct",
+        "strict_executed_correct",
+        "aware_executed_correct",
+        "full_fidelity_n",
+        "strict_certificate_n",
+        "aware_certificate_n"
+      ],
+      "public_initial": [
+        "model",
+        "Original",
+        "Identical repeat",
+        "Rename",
+        "Reorder",
+        "Generic reasoning",
+        "Semantic bundle",
+        "Mechanism edit"
+      ],
+      "public_followup": [
+        "model",
+        "Original",
+        "Repeat",
+        "Generic reasoning",
+        "Target cue",
+        "Gate cue",
+        "Intervention cue",
+        "Complete-equation cue",
+        "Full bundle"
+      ],
+      "local_assistance": [
+        "condition",
+        "correct",
+        "n"
+      ],
+      "local_selection": [
+        "condition",
+        "correct",
+        "n"
+      ],
+      "local_context": [
+        "condition",
+        "correct",
+        "n"
+      ],
+      "local_projection": [
+        "condition",
+        "correct",
+        "n"
+      ],
+      "jinesis_fable": [
+        "state",
+        "direct_correct",
+        "cot_correct",
+        "net_correct",
+        "difference_pp",
+        "ci95_pp",
+        "mcnemar_p"
+      ],
+      "content_match": [
+        "condition",
+        "correct",
+        "n",
+        "parsed_n",
+        "wilson_ci95_percent"
+      ],
+      "october": [
+        "model",
+        "correct",
+        "saved_n",
+        "not_saved_n",
+        "wilson_ci95_percent"
+      ],
+      "october_rungs": [
+        "model",
+        "rung",
+        "correct",
+        "saved_n"
+      ],
+      "annotations": [
+        "category",
+        "count",
+        "sample_n",
+        "weighted_percent",
+        "ci95_percent"
+      ],
+      "scorer_partition": [
+        "historical_positive_partition",
+        "count"
+      ],
+      "scorer_modes": [
+        "mode",
+        "n",
+        "positive_n",
+        "negative_n",
+        "false_positive_n",
+        "false_negative_n",
+        "conformance_percent"
+      ],
+      "thesis_crossmodels": [
+        "model",
+        "n",
+        "accuracy_percent",
+        "early_percent",
+        "early_invariance_percent",
+        "late_invariance_percent"
+      ],
+      "thesis_do": [
+        "alpha",
+        "causal_high_minus_low",
+        "noncausal_high_minus_low"
+      ]
+    }
+  }
+}

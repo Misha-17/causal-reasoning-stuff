@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The results · Causal reasoning</title><meta name="description" content="Every substantive result from the supplied archive, with sample sizes, conditions and evidence status."><meta name="theme-color" content="#f5f1e8"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/style.css"><script src="assets/app.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><svg viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21L44 31M19 43L44 33"></path><circle cx="15" cy="19" r="6"></circle><circle cx="15" cy="45" r="6"></circle><circle cx="49" cy="32" r="7"></circle></g></svg><span>Causal reasoning<small>Jinesis research archive</small></span></a><button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button><nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="results.html" aria-current="page">Results</a><a href="methods.html">Methods</a><a href="examples.html">Examples</a><a href="wider-work.html">Wider work</a></nav></div></header><main class="shell" id="main"><div class="hero hero-small"><div class="eyebrow">The evidence / A dedicated results page</div><h1>What happened.<br>What it supports.</h1><p class="lead">The numbers are grouped by experiment. Full runs, selected samples, synthetic tasks, manuscript claims, and an unfinished evaluation each keep their own denominators.</p></div><div class="article-grid"><aside class="page-rail" aria-label="On this page"><span>On this page</span><a href="#archive">The archived CLadder answer scores</a><a href="#benchmark-audit">Some recorded “errors” came from the benchmark</a><a href="#doverifier">What DoVerifier could and could not verify</a><a href="#contracts">Good answers and good executable contracts were different things</a><a href="#public-prompts">Specific reminders helped selected questions, with limited replication</a><a href="#identified-information">The solver checked what the supplied information could identify</a><a href="#local-studies">Showing the truth table helped, but did not solve the task</a><a href="#jinesis-scoring">The scoring rule changed what “accepted” meant</a><a href="#weighting-retries">The same archive could change direction under a different question mix</a><a href="#structured-counterfactuals">The structured solver used privileged information</a><a href="#causaltrace">Correct final answers sometimes had unsupported visible arguments</a><a href="#judge-campaign">A completed judge run failed its own quality gates</a><a href="#october">The October comparison was still incomplete</a><a href="#internals">Internal measurements suggested patterns, with important limits</a><a href="#additional-results">Other completed work and claims are kept in their own scope</a><a href="#reading-the-record">What can be said confidently</a></aside><div class="article-body"><div class="results-intro"><p>The work tested answers, benchmark labels, explanations, executable contracts and internal model measurements. Each result below keeps its own denominator and evidence status. A number from one study should not quietly become a score for another.</p>
+<p>“Correct” in a CLadder answer table means agreement with the released answer key. The benchmark audit separately asks whether that key follows from the displayed problem. A percentage-point change is the difference between two percentages: 50% to 60% is a gain of 10 points.</p>
+</div>
+<section class="chapter" id="archive"><div class="section-label">01 · Historical model answers</div><h2>The archived CLadder answer scores</h2>
+<p>The main archive contains <strong>91,272 recorded responses in 12 conditions</strong>, matched to the 10,112-question CLadder v1.5 reference. The historical prompts, deployment versions and generation settings are not consistently available. These are archived measurements, with different coverage and selection rules; they do not form one fair release-level leaderboard.</p>
+<figure><p class="chart-scroll-hint">Scroll across the figure →</p><div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable research figure"><img src="assets/paired-changes.svg" alt="Paired prompt changes: repairs and harms for Kimi, OpenRouter and a selected Opus rerun." loading="lazy"></div><figcaption>Each comparison uses the same items within its pair. The selected Opus sample is different from the full paired archives.</figcaption></figure><div class="table-scroll"><table>
+<thead><tr><th scope="col">Recorded model / archive</th><th scope="col">Condition</th><th scope="col">Correct / available</th><th scope="col">Accuracy</th><th scope="col">Scope</th></tr></thead><tbody>
+<tr><th scope="row">Opus 4.8</th><td>Baseline</td><td>9,235 / 10,105</td><td>91.39%</td><td>Near-full historical archive</td></tr>
+<tr><th scope="row">Sonnet 4.6</th><td>Baseline</td><td>9,204 / 10,102</td><td>91.11%</td><td>Near-full historical archive</td></tr>
+<tr><th scope="row">Gemini 2.5 Flash</th><td>Baseline</td><td>8,626 / 10,097</td><td>85.43%</td><td>Near-full historical archive</td></tr>
+<tr><th scope="row">GPT-5.4 Nano</th><td>Baseline</td><td>5,539 / 10,108</td><td>54.80%</td><td>Near-full historical archive</td></tr>
+<tr><th scope="row">GPT-5.5</th><td>Baseline</td><td>5,482 / 5,765</td><td>95.09%</td><td>Partial: 57.01% of canonical items</td></tr>
+<tr><th scope="row">Opus 4.8</th><td>Selected forced-thinking rerun</td><td>4,157 / 4,607</td><td>90.23%</td><td>Selected IDs with empty original reasoning fields</td></tr>
+<tr><th scope="row">Kimi K3</th><td>Direct</td><td>9,566 / 10,112</td><td>94.60%</td><td>Full paired archive</td></tr>
+<tr><th scope="row">Kimi K3</th><td>CausalCoT</td><td>9,537 / 10,112</td><td>94.31%</td><td>Same 10,112 IDs</td></tr>
+<tr><th scope="row">OpenRouter archive — underlying model unidentified</th><td>Direct</td><td>9,573 / 10,112</td><td>94.67%</td><td>Full paired V1 archive</td></tr>
+<tr><th scope="row">OpenRouter archive — underlying model unidentified</th><td>CausalCoT</td><td>9,591 / 10,112</td><td>94.85%</td><td>Same V1 IDs</td></tr>
+<tr><th scope="row">GPT-labelled pilot</th><td>Direct</td><td>20 / 20</td><td>100.00%</td><td>Small separate pilot</td></tr>
+<tr><th scope="row">GPT-labelled pilot</th><td>CausalCoT</td><td>20 / 20</td><td>100.00%</td><td>Same 20 pilot IDs</td></tr>
+</tbody></table></div>
+<p>Unparsed final answers count as wrong. There are 449 unparsed records: 443 empty and six nonempty. Reading the actual final text changes 27 stored prediction fields: two Sonnet self-corrections, 20 OpenRouter direct answers and five truncated OpenRouter CausalCoT outputs. An empty Fable-labelled synthetic file has <strong>zero observations</strong>; its stored 0.0 is not a measured 0% accuracy.</p>
+<h3>When the same questions received different instructions</h3>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Comparison</th><th scope="col">Both correct</th><th scope="col">Repairs</th><th scope="col">Harms</th><th scope="col">Both wrong</th><th scope="col">Net change</th></tr></thead><tbody>
+<tr><th scope="row">Kimi: direct → six-step CausalCoT</th><td>9414</td><td>123</td><td>152</td><td>423</td><td>−29 / 10,112; −0.287 points</td></tr>
+<tr><th scope="row">OpenRouter V1: direct → CausalCoT</th><td>9532</td><td>59</td><td>41</td><td>480</td><td>+18 / 10,112; +0.178 points</td></tr>
+<tr><th scope="row">Selected Opus rerun</th><td>—</td><td>114</td><td>39</td><td>—</td><td>+75 / 4,607; +1.63 points</td></tr>
+</tbody></table></div>
+<p>Kimi’s paired difference has an exact McNemar p-value of 0.0911 and a reported 95% target-bootstrap interval of −0.613 to +0.030 points. This run does not establish a reliable overall prompting advantage. On counterfactual questions alone, Kimi scores 3,400 / 3,792 direct and 3,371 / 3,792 with CausalCoT.</p>
+<p>For the selected Opus IDs, the original score is 4,082 / 4,607 and the rerun is 4,157 / 4,607. Only 354 reruns contain a nonempty new reasoning field. The exact changed request was not recovered, so “forced thinking” is an archive label rather than a verified account of additional internal computation.</p>
+<details class="results-detail"><summary>Additional synthetic answers, attempts and copies</summary>
+<p>A separate GPT-5.5-labelled file has 9,881 noncanonical structured items, of which 9,176 are stored correct (92.87%). Their rung counts are 3,200 association, 3,010 intervention and 3,671 counterfactual. This supports the recorded count, while generator provenance and prompt equivalence remain incomplete. Historical documents also report Opus synthetic accuracy of 90.00% and rung-three scores of 92.21% versus 86.77%; the matching Opus denominator and raw results were not established.</p>
+<p>Raw paired histories contain 20,264 Kimi rows for 20,224 unique item/condition keys, 21,166 OpenRouter rows for 20,224 keys and 80 GPT pilot rows for 40 keys. Extra attempts and byte-identical copies are not extra independent questions. Two 200-row Opus pilot sources are identical; the rung-one/two pilot has 196 rows, selected as 100 originally correct and 96 incorrect.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 5–9, 63, 86.</p>
+</section>
+<section class="chapter" id="benchmark-audit"><div class="section-label">02 · Checking the questions</div><h2>Some recorded “errors” came from the benchmark</h2>
+<p>A model can disagree with the answer key while following the displayed rules. The audit checked mechanisms, arithmetic, wording and whether the information was sufficient. Its corrections are local and bounded; they do not certify a completely repaired benchmark.</p>
+<figure><p class="chart-scroll-hint">Scroll across the figure →</p><div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable research figure"><img src="assets/identified-sign.svg" alt="Of 316 mediation questions, all lack a unique effect magnitude; 226 have a strict identified sign and 90 do not." loading="lazy"></div><figcaption>A missing effect magnitude does not always imply a missing yes/no sign. The result depends on the stated natural-effect estimand and model assumptions.</figcaption></figure><div class="table-scroll"><table>
+<thead><tr><th scope="col">Audit</th><th scope="col">Questions examined</th><th scope="col">Finding</th><th scope="col">What it establishes</th></tr></thead><tbody>
+<tr><th scope="row">Deterministic DiamondCut rules</th><td>158</td><td>37 answer labels flip</td><td>The displayed mechanism differs from the generator in a specific branch</td></tr>
+<tr><th scope="row">Transparent numerical questions</th><td>5048</td><td>85 displayed-value disagreements; 9 survive rounding allowance</td><td>Nine robust marginal-probability discrepancies</td></tr>
+<tr><th scope="row">Arrowhead mediation questions</th><td>316</td><td>226 sign-resolved; 90 sign-unresolved</td><td>All magnitudes remain unidentified in the stated model class</td></tr>
+<tr><th scope="row">ETT wording</th><td>1264</td><td>108 repeat the factual treatment state; 41 old controls withdrawn</td><td>Retained independently checked control pool: 4,567</td></tr>
+<tr><th scope="row">Nonce Boolean counterfactuals</th><td>726</td><td>23 released-label disagreements; 11 within 568 factually consistent items</td><td>Conditional on complete-equation interpretation</td></tr>
+<tr><th scope="row">Nonce adjustment questions</th><td>569</td><td>391 unique observed method; 134 require an unobserved covariate; 44 have two valid methods</td><td>Graphical adjustment need not select a unique ranked answer</td></tr>
+</tbody></table></div>
+<p>The 37 deterministic discrepancies plus nine robust numerical discrepancies give <strong>46 specific label corrections</strong>. On the deterministic set, Sonnet and both OpenRouter conditions go from 0 / 37 released-label matches to 37 / 37 displayed-world matches; GPT does the same on its 24 available items. Kimi direct changes from 1 / 37 to 36 / 37, and CausalCoT from 2 / 37 to 35 / 37. Across all 46 corrections, Kimi totals become 9,610 / 10,112 direct and 9,579 / 10,112 CausalCoT: a net loss of 31 with the scaffold.</p>
+<p>For mediation, the same displayed percentages can fit more than one causal world. The 90 sign-unresolved questions include 41 natural-direct and 49 natural-indirect cases. For one item, compatible worlds give an effect of −0.00805358 or +0.0293. The conclusion depends on the stated binary model class and the chosen pure-effect target; informal natural-effect wording can leave that choice unclear.</p>
+<details class="results-detail"><summary>Corrected numerical controls and visible reasoning</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Recorded configuration</th><th scope="col">Correct / evaluated</th><th scope="col">Accuracy</th></tr></thead><tbody>
+<tr><th scope="row">Opus baseline</th><td>4,355 / 4,566</td><td>95.38%</td></tr>
+<tr><th scope="row">Opus selected rerun</th><td>2,122 / 2,296</td><td>92.42%</td></tr>
+<tr><th scope="row">Sonnet baseline</th><td>4,513 / 4,564</td><td>98.88%</td></tr>
+<tr><th scope="row">Gemini baseline</th><td>4,462 / 4,560</td><td>97.85%</td></tr>
+<tr><th scope="row">Nano baseline</th><td>2,657 / 4,565</td><td>58.20%</td></tr>
+<tr><th scope="row">GPT-5.5 partial baseline</th><td>2,687 / 2,691</td><td>99.85%</td></tr>
+<tr><th scope="row">Kimi direct</th><td>4,537 / 4,567</td><td>99.34%</td></tr>
+<tr><th scope="row">Kimi CausalCoT</th><td>4,549 / 4,567</td><td>99.61%</td></tr>
+<tr><th scope="row">OpenRouter direct</th><td>4,458 / 4,567</td><td>97.61%</td></tr>
+<tr><th scope="row">OpenRouter CausalCoT</th><td>4,488 / 4,567</td><td>98.27%</td></tr>
+<tr><th scope="row">GPT pilot direct</th><td>10 / 10</td><td>100.00%</td></tr>
+<tr><th scope="row">GPT pilot CausalCoT</th><td>10 / 10</td><td>100.00%</td></tr>
+</tbody></table></div>
+<p>The old control pool of 4,608 is superseded by 4,567. The removed 41 items lacked the treatment-switching condition assumed by the old checker. This is a certification mistake, not proof of an arithmetic mistake by every model or of a wrong label for every repeated-state question.</p>
+<p>Sonnet has 10,082 nonempty reasoning fields, including 3,788 containing only Yes/No. That leaves 6,294 substantive fields and 3,808 responses without substantive visible steps. All 10,108 Nano baseline responses lack substantive intermediate text. Missing text cannot locate an intermediate error or show that no internal reasoning occurred.</p>
+</details>
+<details class="results-detail"><summary>Exploratory trace reading and judge attempts</summary>
+<p>A selected 20-pair Kimi audit, drawn from 168 eligible harms or persistent failures, found seven AND-gate/path-sufficiency cases, four target/effect substitutions, three negation-as-missing-edge cases, three default-zero cases and three other cases. This is a purposive sample rather than a population estimate.</p>
+<p>The broader selected review has 261 cases across 168 questions: 151 reviewed cases, 175 assistant readings and 110 automatic statuses. Twenty-four double-read cases have 22 stage agreements. Eighty-one qualified localizations divide into 41 mechanism/graph, 21 identification, 15 target and four computation cases; there are 112 disputes, 33 unlocalizable cases and 35 without an established substantive error. These are assistant judgments, not independent human validation.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Judge protocol</th><th scope="col">Attempts / completed annotations</th><th scope="col">Observed outcome</th><th scope="col">Limit</th></tr></thead><tbody>
+<tr><th scope="row">Legacy GPT-mini</th><td>20 successful annotations</td><td>6 repairs, 1 harm, 13 persistent failures</td><td>Known pair outcome reveals the gold label</td></tr>
+<tr><th scope="row">Explicit gold-aware judge</th><td>50 attempts / 35 successful</td><td>9 repairs, 10 harms, 16 persistent failures</td><td>All 16 persistent failures excluded as unsupported labels; 9 of 19 stage cases coded derivation</td></tr>
+<tr><th scope="row">Sonnet two-pass</th><td>50 oracle attempts; 46 validated blind solutions; 39 clean oracle/adjudication records</td><td>27 accepted solutions; 0 successful stage annotations</td><td>All 27 trace-stage requests failed; cannot report completed stage diagnoses</td></tr>
+</tbody></table></div>
+</details>
+<p class="source-note">Source: research inventory report, pp. 8–10, 21–22, 26, 50, 103.</p>
+</section>
+<section class="chapter" id="doverifier"><div class="section-label">03 · Symbolic verification</div><h2>What DoVerifier could and could not verify</h2>
+<p>The local DoVerifier work repaired probability parsing, graph rules and proof-search validation. A successful check certifies a represented expression under a supplied graph. It does not automatically certify the accompanying explanation or answer.</p>
+<figure><p class="chart-scroll-hint">Scroll across the figure →</p><div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable research figure"><img src="assets/verifier-acceptance.svg" alt="Unrelated shuffled traces: historical expression checker accepted 216 of 300; directed strict audit accepted 125 of 300." loading="lazy"></div><figcaption>These are expression-scoring policies, rather than validated rates of reasoning correctness. The historical subset is the first 300 rows, not a documented random sample.</figcaption></figure><div class="table-scroll"><table>
+<thead><tr><th scope="col">Local measurement</th><th scope="col">Result</th><th scope="col">Meaning</th></tr></thead><tbody>
+<tr><th scope="row">Assigned-outcome Rule 1 stress test</th><td>Baseline accepts the invalid deletion in 120 / 120; repaired version in 0 / 120</td><td>A specific graph-rule defect was repaired</td></tr>
+<tr><th scope="row">Predicted graphs in Kimi CausalCoT</th><td>6,250 usable; 4,980 match reference edges</td><td>Coverage-limited extraction</td></tr>
+<tr><th scope="row">Query type</th><td>6,039 / 7,059 parseable cases agree</td><td>Unavailable parses are not demonstrated cognitive errors</td></tr>
+<tr><th scope="row">Numeric result</th><td>2,605 / 7,903 usable scalar-oracle cases agree</td><td>A restricted operational test</td></tr>
+<tr><th scope="row">All six intermediate checks</th><td>169 / 1,834 eligible records pass</td><td>Not independent whole-trace certification</td></tr>
+<tr><th scope="row">Causal-expression extraction</th><td>3,446 parsed; 625 ambiguous; 669 parse failures; 5,372 outside support</td><td>These categories account for 10,112 records</td></tr>
+<tr><th scope="row">Canonical target match</th><td>1,340 / 3,446</td><td>Identity of represented expressions</td></tr>
+<tr><th scope="row">Gold-graph directed and mutual acceptance</th><td>1,340 / 2,863 eligible</td><td>Different scope from predicted-graph acceptance</td></tr>
+<tr><th scope="row">Predicted-graph acceptance</th><td>947 / 2,020 eligible</td><td>Do not compare rates without matching eligibility</td></tr>
+<tr><th scope="row">Saved proof paths</th><td>4,574 paths; every path has zero steps</td><td>No nontrivial symbolic rescue in this local full run</td></tr>
+</tbody></table></div>
+<p>Twelve retained baseline-versus-repair probes include invalid observation deletion, lost assigned values, undeclared variables, cycles and malformed trailing text. Positive controls preserve valid parsing and the motivating three-step proof. The saved test history grows from 66 original tests to 120 after repair and 178 at full-evaluation verification; these counts are implementation checks, not new LLM samples.</p>
+<h3>The later counterfactual adapter</h3>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Measurement</th><th scope="col">Result</th></tr></thead><tbody>
+<tr><th scope="row">Covered counterfactual IDs / condition records</th><td>3,792 / 7,584</td></tr>
+<tr><th scope="row">Independently computed answers</th><td>3,634</td></tr>
+<tr><th scope="row">Confounded ETT cases marked underidentified</th><td>158</td></tr>
+<tr><th scope="row">Released-label matches among computed answers</th><td>3,600 / 3,634</td></tr>
+<tr><th scope="row">Stochastic recomputation / source replay sign disagreements</th><td>51</td></tr>
+<tr><th scope="row">Composite score including reference-terminal replay</th><td>3,792 / 3,792 — compatibility audit</td></tr>
+<tr><th scope="row">One explicit target extracted from direct / CausalCoT summaries</th><td>108 / 3,792; 1,570 / 3,792</td></tr>
+<tr><th scope="row">Ambiguous direct / CausalCoT target extractions</th><td>17; 707</td></tr>
+<tr><th scope="row">Trace-only solver answers</th><td>0 direct; 1 CausalCoT</td></tr>
+</tbody></table></div>
+<p>The perfect composite combines independent calculations with replay from the reference. It must not be presented as perfect independent causal accuracy. Narrow trace extraction chiefly measures parser coverage and explicit fact availability.</p>
+<details class="results-detail"><summary>Historical formalizer and unrelated-trace controls</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Formalizer / acceptance measurement</th><th scope="col">Accepted / evaluated</th></tr></thead><tbody>
+<tr><th scope="row">Gemini original question-visible historical rule</th><td>4,535 / 4,671</td></tr>
+<tr><th scope="row">Gemini question-hidden historical rule</th><td>4,076 / 4,671</td></tr>
+<tr><th scope="row">Sonnet historical rule</th><td>2,369 / 2,478</td></tr>
+<tr><th scope="row">Gemini wrong final answers accepted</th><td>323 / 331</td></tr>
+<tr><th scope="row">Sonnet wrong final answers accepted</th><td>79 / 89</td></tr>
+<tr><th scope="row">300 unrelated donated traces: exact match</th><td>182 / 300</td></tr>
+<tr><th scope="row">300 unrelated donated traces: historical equivalence</th><td>216 / 300; Wilson 95% 66.7–76.8%</td></tr>
+<tr><th scope="row">Same 300 originals: question-visible / hidden</th><td>291 / 300; 257 / 300</td></tr>
+<tr><th scope="row">Rare-query unrelated-trace top-up</th><td>145 / 200 accepted; 11 exact; 195 successfully formalized</td></tr>
+</tbody></table></div>
+<p>All 4,671 shuffled traces are exact copies from another query type; none keeps its original trace. The 300 scored targets are the first 300 rows, not a documented random sample. In the question-visible comparison, 212 pass both original and transplant, 79 original only, four transplant only and five neither. Accepting known unrelated reasoning exposes a gap between expression acceptance and explanation validity, rather than proving an unsound do-calculus derivation.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Small evaluator-development run</th><th scope="col">Acceptance</th></tr></thead><tbody>
+<tr><th scope="row">200-row pilot</th><td>116 / 200</td></tr>
+<tr><th scope="row">200-row question-hidden pilot</th><td>80 / 200</td></tr>
+<tr><th scope="row">Revised 200-row pilot</th><td>131 / 200</td></tr>
+<tr><th scope="row">Revised question-hidden pilot</th><td>91 / 200</td></tr>
+<tr><th scope="row">Smoke test</th><td>10 / 20</td></tr>
+<tr><th scope="row">Five variants on the same 30 items</th><td>24, 24, 26, 28 and 30 / 30</td></tr>
+</tbody></table></div>
+<p>The historical question-hidden comparisons change evaluator versions as well as question access: two full-Gemini records and nine pilot records change verdict with unchanged raw formalizer output. The resulting difference cannot be attributed entirely to removing the question.</p>
+</details>
+<details class="results-detail"><summary>External paper claims kept separate</summary>
+<p>The source paper reports symbolic-verifier scores of 73%, 94%, 90% and 84%, and feedback scores of 93%, 99%, 98% and 87% for four model configurations. Its complete original experimental bundle was not available in the local audit. The local project reproduced a motivating proof and preserved diagnostic feedback templates, while a completed local model-feedback experiment was not established. These paper numbers are literature context rather than replicated local results.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 6–7, 12–15.</p>
+</section>
+<section class="chapter" id="contracts"><div class="section-label">04 · Explicit causal operations</div><h2>Good answers and good executable contracts were different things</h2>
+<p>V2 generated finite Boolean worlds with complete mechanisms and explicit operation instructions. YES means the target holds in every compatible input, NO means it holds in none, and UNDETERMINED means both outcomes are possible. This is logical certainty rather than a majority vote.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Recorded configuration</th><th scope="col">Correct / evaluated</th><th scope="col">Accuracy</th></tr></thead><tbody>
+<tr><th scope="row">Opus 4.8</th><td>288 / 288</td><td>100.00%</td></tr>
+<tr><th scope="row">GPT-5.5</th><td>288 / 288</td><td>100.00%</td></tr>
+<tr><th scope="row">Kimi K3</th><td>287 / 288</td><td>99.65%</td></tr>
+<tr><th scope="row">Sonnet 4.6</th><td>286 / 288</td><td>99.31%</td></tr>
+<tr><th scope="row">Nano</th><td>277 / 288</td><td>96.18%</td></tr>
+<tr><th scope="row">Gemini</th><td>190 / 288</td><td>65.97%</td></tr>
+</tbody></table></div>
+<p>These 288 baseline tasks per model include related versions of 48 held-out worlds. On the common 96 core tasks, the brief answer, generic reasoning, declared contract answer and software execution can be compared directly.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Model</th><th scope="col">Brief answer</th><th scope="col">Generic reasoning</th><th scope="col">Declared contract answer</th><th scope="col">Strict execution</th><th scope="col">Operation-aware execution</th></tr></thead><tbody>
+<tr><th scope="row">Opus</th><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td></tr>
+<tr><th scope="row">Sonnet</th><td>95 / 96</td><td>95 / 96</td><td>96 / 96</td><td>78 / 96</td><td>96 / 96</td></tr>
+<tr><th scope="row">Gemini</th><td>66 / 96</td><td>73 / 96</td><td>35 / 96</td><td>83 / 96</td><td>84 / 96</td></tr>
+<tr><th scope="row">Kimi</th><td>95 / 96</td><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td></tr>
+<tr><th scope="row">Nano</th><td>93 / 96</td><td>90 / 96</td><td>89 / 96</td><td>94 / 96</td><td>94 / 96</td></tr>
+<tr><th scope="row">GPT-5.5</th><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td></tr>
+</tbody></table></div>
+<p>Gemini prints 78 faithful contracts but attaches wrong declared answers to 50 of them. Executing those unchanged faithful objects corrects all 50. Yet only 10 / 96 pass the strongest strict certificate. Nano has four mapping errors despite a faithful contract and valid proof; a mixed set of 15 true inputs and one false input requires UNDETERMINED even if the model says NO.</p>
+<p>Operation-aware execution was developed after inspecting these outputs. When an intervention overwrites an equation, it can ignore that old equation under the stated operation. It recovers 18 Sonnet and one Gemini execution with no loss relative to strict execution. Sonnet’s declared answers were already 96 / 96, so this improves executability rather than Sonnet’s answer accuracy. Counterfactuals must preserve the old mechanism for factual root selection.</p>
+<details class="results-detail"><summary>Fidelity, certificates, errors and perturbation sensitivity</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Model</th><th scope="col">Full-model fidelity</th><th scope="col">Strict certified</th><th scope="col">Operation-aware certified</th><th scope="col">Execution repairs / harms versus declared answer</th></tr></thead><tbody>
+<tr><th scope="row">Opus</th><td>96 / 96</td><td>95 / 96</td><td>95 / 96</td><td>0 / 0</td></tr>
+<tr><th scope="row">Sonnet</th><td>74 / 96</td><td>69 / 96</td><td>88 / 96</td><td>0 / 0</td></tr>
+<tr><th scope="row">Gemini</th><td>78 / 96</td><td>10 / 96</td><td>13 / 96</td><td>53 / 4</td></tr>
+<tr><th scope="row">Kimi</th><td>96 / 96</td><td>96 / 96</td><td>96 / 96</td><td>0 / 0</td></tr>
+<tr><th scope="row">Nano</th><td>89 / 96</td><td>80 / 96</td><td>81 / 96</td><td>6 / 1</td></tr>
+<tr><th scope="row">GPT-5.5</th><td>96 / 96</td><td>95 / 96</td><td>95 / 96</td><td>0 / 0</td></tr>
+</tbody></table></div>
+<p>Sonnet’s operation-aware certificate score rises 69 → 88; Gemini 10 → 13; Nano 80 → 81. Sonnet still has six count errors and two witness errors. Full faithful transcription remains a different criterion from query-relative correctness: 22 Sonnet, six Gemini and two Nano objects are query-equivalent without full fidelity.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Perturbation</th><th scope="col">Joint correctness / effect</th></tr></thead><tbody>
+<tr><th scope="row">Oracle-changing mechanism edits</th><td>48 / 48 Sonnet, Opus and GPT; 47 / 48 Kimi; 44 / 48 Nano; 19 / 48 Gemini</td></tr>
+<tr><th scope="row">Gemini renaming / reorder / narrative pairs</th><td>8 / 16 jointly correct in each; answer changes 7 / 6 / 7</td></tr>
+<tr><th scope="row">Causal → program framing</th><td>Gemini 18 repairs and 17 harms; Nano 3 and 3; Sonnet 1 and 1; Kimi 1 and 0</td></tr>
+<tr><th scope="row">Framing inference</th><td>At most one net change / 96 pairs for each model; no Holm-adjusted significant contrast</td></tr>
+<tr><th scope="row">Erasing overwritten equations safely</th><td>Counts and labels preserved in 32 / 32 INTERVENE/FRESH tests</td></tr>
+<tr><th scope="row">Unsafe counterfactual erasure</th><td>Support expands in 18 / 48; two labels change</td></tr>
+</tbody></table></div>
+<p>The controlled design’s independent scalar and bit-parallel evaluators agree. Pre-call checks record 128 causal/program matches, 64 gate edits that change answers, 21 rename checks, 22 reorder checks and 21 narrative equivalents. The core label distribution is 32 YES, 32 NO and 32 UNDETERMINED; a family/role-majority baseline gets 46 / 96. Questions from the same world are clustered together for uncertainty.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 17–19, 27, 49.</p>
+</section>
+<section class="chapter" id="public-prompts"><div class="section-label">05 · Public CLadder prompt changes</div><h2>Specific reminders helped selected questions, with limited replication</h2>
+<p>Two public studies each used 36 selected Boolean counterfactual questions and six recorded model endpoints. The semantic bundle reminded the model to preserve the requested target, AND/OR/NOT rules, intervention and background conditions. The follow-up separated those reminders into components.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Model</th><th scope="col">Initial generic → bundle</th><th scope="col">Follow-up generic → bundle</th></tr></thead><tbody>
+<tr><th scope="row">Opus</th><td>31 → 33 / 36</td><td>35 → 36 / 36</td></tr>
+<tr><th scope="row">Sonnet</th><td>35 → 36 / 36</td><td>36 → 36 / 36</td></tr>
+<tr><th scope="row">Gemini</th><td>16 → 21 / 36</td><td>21 → 30 / 36</td></tr>
+<tr><th scope="row">Kimi</th><td>26 → 32 / 36</td><td>30 → 36 / 36</td></tr>
+<tr><th scope="row">Nano</th><td>23 → 23 / 36</td><td>26 → 32 / 36</td></tr>
+<tr><th scope="row">GPT-5.5</th><td>26 → 36 / 36</td><td>30 → 36 / 36</td></tr>
+</tbody></table></div>
+<p>Only the <strong>initial GPT-5.5 contrast</strong> survives the corrected six-model, mechanism-cluster analysis: 26 → 36 correct, ten repairs and no harms, +27.78 points, 95% unadjusted cluster interval 12.90–43.75 and Holm p = 0.046875. No follow-up model contrast survives correction. A completion cue can make a convention explicit or add it; its benefit need not mean the original answer was invalid under every possible reading.</p>
+<p>Each arm has 20 distinct mechanisms after ignoring variable aliases; 17 mechanisms recur across arms. The follow-up uses new question IDs but substantially overlaps the initial mechanisms. It also raises the output cap from 3,072 to 4,096 tokens. Pooling them as 72 independent worlds would exaggerate the evidence.</p>
+<details class="results-detail"><summary>Every condition in both public studies</summary>
+<div class="table-scroll"><table>
+<caption>Initial study: correct counts out of 36 for every cell</caption>
+<thead><tr><th scope="col">Model</th><th scope="col">Original</th><th scope="col">Identical repeat</th><th scope="col">Rename</th><th scope="col">Reorder</th><th scope="col">Generic reasoning</th><th scope="col">Semantic bundle</th><th scope="col">Mechanism edit</th></tr></thead><tbody>
+<tr><th scope="row">Opus</th><td>30</td><td>32</td><td>30</td><td>28</td><td>31</td><td>33</td><td>33</td></tr>
+<tr><th scope="row">Sonnet</th><td>36</td><td>36</td><td>36</td><td>36</td><td>35</td><td>36</td><td>35</td></tr>
+<tr><th scope="row">Gemini</th><td>15</td><td>14</td><td>17</td><td>12</td><td>16</td><td>21</td><td>22</td></tr>
+<tr><th scope="row">Kimi</th><td>26</td><td>26</td><td>28</td><td>22</td><td>26</td><td>32</td><td>27</td></tr>
+<tr><th scope="row">Nano</th><td>19</td><td>21</td><td>22</td><td>18</td><td>23</td><td>23</td><td>17</td></tr>
+<tr><th scope="row">GPT-5.5</th><td>20</td><td>23</td><td>26</td><td>26</td><td>26</td><td>36</td><td>25</td></tr>
+</tbody></table></div>
+<p>Gemini has one missing response in the original condition and one in mechanism-edit. Only the original missing response is recorded as truncated; all other initial cells have no missing responses. All completed truncated outputs count as nonanswers rather than being rescued by an early label.</p>
+<div class="table-scroll"><table>
+<caption>Follow-up: correct counts out of 36 for every cell</caption>
+<thead><tr><th scope="col">Model</th><th scope="col">Original</th><th scope="col">Repeat</th><th scope="col">Generic reasoning</th><th scope="col">Target cue</th><th scope="col">Gate cue</th><th scope="col">Intervention cue</th><th scope="col">Complete-equation cue</th><th scope="col">Full bundle</th></tr></thead><tbody>
+<tr><th scope="row">Opus</th><td>35</td><td>35</td><td>35</td><td>34</td><td>36</td><td>34</td><td>35</td><td>36</td></tr>
+<tr><th scope="row">Sonnet</th><td>35</td><td>35</td><td>36</td><td>36</td><td>34</td><td>36</td><td>36</td><td>36</td></tr>
+<tr><th scope="row">Gemini</th><td>24</td><td>20</td><td>21</td><td>23</td><td>28</td><td>27</td><td>31</td><td>30</td></tr>
+<tr><th scope="row">Kimi</th><td>29</td><td>29</td><td>30</td><td>31</td><td>34</td><td>32</td><td>36</td><td>36</td></tr>
+<tr><th scope="row">Nano</th><td>25</td><td>24</td><td>26</td><td>25</td><td>33</td><td>27</td><td>32</td><td>32</td></tr>
+<tr><th scope="row">GPT-5.5</th><td>27</td><td>28</td><td>30</td><td>28</td><td>35</td><td>31</td><td>35</td><td>36</td></tr>
+</tbody></table></div>
+<p>Every follow-up cell has zero missing and zero truncated responses. The final parser uses the last explicit declaration from a completed response; five later declarations correct earlier ones. Historical progress summaries can retain older scores.</p>
+</details>
+<details class="results-detail"><summary>Retries, software mutants and request inventory</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Retry of 17 selected Gemini nonanswers</th><th scope="col">Answers recovered</th><th scope="col">Correct / requested</th><th scope="col">Other outcomes</th></tr></thead><tbody>
+<tr><th scope="row">Same token cap</th><td>13</td><td>10 / 17</td><td>4 truncated</td></tr>
+<tr><th scope="row">12,288-token cap</th><td>15</td><td>14 / 17</td><td>2 provider errors</td></tr>
+</tbody></table></div>
+<p>The paired retry accuracy p-value is 0.34375. These selected-failure attempts do not replace the primary scores or estimate overall missingness.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Deliberately wrong software rule</th><th scope="col">Applicable held-out tasks</th><th scope="col">Valid altered queries</th><th scope="col">Changed labels</th><th scope="col">Empty contexts</th></tr></thead><tbody>
+<tr><th scope="row">Treat observation as intervention</th><td>16</td><td>16</td><td>8</td><td>0</td></tr>
+<tr><th scope="row">Reuse fresh roots instead of factual roots</th><td>48</td><td>48</td><td>22</td><td>0</td></tr>
+<tr><th scope="row">Treat outcome as positive effect</th><td>64</td><td>64</td><td>23</td><td>0</td></tr>
+<tr><th scope="row">Replace AND with OR</th><td>74</td><td>70</td><td>26</td><td>4</td></tr>
+<tr><th scope="row">Filter factual evidence after intervention</th><td>48</td><td>41</td><td>4</td><td>7</td></tr>
+</tbody></table></div>
+<p>These mutations are executable wrong-rule controls rather than observed neural algorithms. Calibration versions respectively change 3 / 6, 8 / 15, 11 / 21, 10 / 32 and 0 / 15 labels.</p>
+<p>Recorded requests total 6,382: 12 pilot, 216 calibration, 2,880 held-out, 1,512 initial public, 1,728 follow-up and 34 retries. The recorded experiment subtotal is $59.46, based on provider-reported or catalog-estimated costs, rather than a reconciled account statement.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 20–21, 28–33.</p>
+</section>
+<section class="chapter" id="identified-information"><div class="section-label">06 · Exact information and contracts</div><h2>The solver checked what the supplied information could identify</h2>
+<p>V3 added no model calls. It built a rational-arithmetic solver for binary treatment and outcome worlds, and re-examined the 576 V2 contract objects. It distinguishes an unidentified interval, impossible constraints and an undefined query with zero-probability evidence.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Exact-solver validation</th><th scope="col">Count / outcome</th></tr></thead><tbody>
+<tr><th scope="row">Enumerated histograms</th><td>330 at N = 4; 6,435 at N = 8</td></tr>
+<tr><th scope="row">Independent factual/surgical formula agreements</th><td>6,765 / 6,765 grid records</td></tr>
+<tr><th scope="row">Information classes</th><td>3,792 grid-class checks; 3,498 distinct classes after 294 repeated signatures</td></tr>
+<tr><th scope="row">Defined range comparisons</th><td>39,276 agree; 36,684 distinct class-target bounds</td></tr>
+<tr><th scope="row">Undefined distinct conditional queries</th><td>8,790, with zero-probability evidence</td></tr>
+<tr><th scope="row">Unique request outputs passing certificate checks</th><td>45,474 / 45,474</td></tr>
+<tr><th scope="row">Adding intervention information</th><td>34,998 comparisons; 21,711 strict narrowings; no widened defined interval</td></tr>
+<tr><th scope="row">Monotonicity-compatible classes</th><td>1,452 / 3,498; 15,402 certified targets; 4,086 strict narrowings</td></tr>
+<tr><th scope="row">Monotonicity-inconsistent classes</th><td>2,046, each with an infeasibility certificate</td></tr>
+<tr><th scope="row">Saved examples rechecked during the audit</th><td>9 / 9</td></tr>
+</tbody></table></div>
+<p>These are constructed validation grids rather than estimates of real-world prevalence. The four-state grid is nested in the eight-state grid. A transportation-table argument establishes sharp continuous bounds for these signatures; a dual certificate shows that no compatible world can exceed the claimed bound.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Information supplied</th><th scope="col">Identified conclusion</th></tr></thead><tbody>
+<tr><th scope="row">Equal observed cells of 1/4</th><td>ATE can lie anywhere in [−1/2, +1/2]</td></tr>
+<tr><th scope="row">Add P(Y₀=1) = P(Y₁=1) = 1/2</th><td>ATE = 0, but probability of necessity remains [0, 1]</td></tr>
+<tr><th scope="row">Observed cells (1/4, 1/4, 1/8, 3/8), plus P(Y₀=1)=1/4</th><td>ATE remains [1/8, 5/8]; ETT is exactly 3/4</td></tr>
+<tr><th scope="row">Know all eight response-type weights are 1/8</th><td>A counterfactual probability can be exactly 1/2 while an individual outcome stays unknown</td></tr>
+</tbody></table></div>
+<h3>A matching answer can hide a different set of worlds</h3>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Contract criterion</th><th scope="col">Strict interpreter / 576</th><th scope="col">Operation-aware / 576</th></tr></thead><tbody>
+<tr><th scope="row">Full faithful transcription</th><td>529</td><td>529</td></tr>
+<tr><th scope="row">Executable object</th><td>544</td><td>563</td></tr>
+<tr><th scope="row">Exact excluded/false/true signature</th><td>540</td><td>559</td></tr>
+<tr><th scope="row">Correct executed answer label</th><td>543</td><td>562</td></tr>
+<tr><th scope="row">Executed root counts match the requested query</th><td>540</td><td>559</td></tr>
+<tr><th scope="row">Valid proof</th><td>459</td><td>475</td></tr>
+<tr><th scope="row">Query-equivalent certified object</th><td>453</td><td>469</td></tr>
+</tbody></table></div>
+<p>Three Nano objects keep the expected coarse label after omitting required evidence. Two declared answers are correct; one is not. Another omission changes YES into UNDETERMINED. Conversely, a redundant omitted condition can leave every world unchanged. Equal labels, equal counts and equal world signatures therefore answer different questions.</p>
+<details class="results-detail"><summary>All-equation relevance results</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Operation</th><th scope="col">Core tasks</th><th scope="col">Equation occurrences</th><th scope="col">Unchanged under every replacement</th><th scope="col">Unchanged across valid replacements</th><th scope="col">Labels unchanged but signature can change</th><th scope="col">Replacement evaluations</th></tr></thead><tbody>
+<tr><th scope="row">All</th><td>96</td><td>1056</td><td>365</td><td>410</td><td>116</td><td>15048</td></tr>
+<tr><th scope="row">Observe</th><td>16</td><td>176</td><td>45</td><td>46</td><td>27</td><td>2516</td></tr>
+<tr><th scope="row">Intervene</th><td>16</td><td>176</td><td>83</td><td>83</td><td>15</td><td>2516</td></tr>
+<tr><th scope="row">Counterfactual</th><td>48</td><td>529</td><td>168</td><td>187</td><td>59</td><td>7600</td></tr>
+<tr><th scope="row">Fresh</th><td>16</td><td>175</td><td>69</td><td>94</td><td>15</td><td>2416</td></tr>
+</tbody></table></div>
+<p>Every allowed one-parent or two-parent truth table was substituted for one equation while retaining its named parents. Across alternatives, 3,204 keep the label while changing the query signature; 1,207 also keep the count triple. Twenty-five FRESH equation occurrences preserve post-action truth but permit impossible factual evidence. Removing individually irrelevant equations together can still change the answer: eight single replacements preserve a two-root signature in one fixture, while replacing both equations changes NO to YES. These are software interventions, not additional model responses.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 23–25, 34–36.</p>
+</section>
+<section class="chapter" id="local-studies"><div class="section-label">07 · Fresh local Qwen3 experiments</div><h2>Showing the truth table helped, but did not solve the task</h2>
+<p>V4 collected 1,104 scored fresh outputs from one local Qwen3-4B Q4_K_M configuration, with one stochastic response per condition. Main and selection studies use 24 worlds and 48 questions. The task and output design isolate what information or wording changes; supplying oracle truth is assistance rather than better unaided model capability.</p>
+<figure><p class="chart-scroll-hint">Scroll across the figure →</p><div class="diagram-scroll" tabindex="0" role="region" aria-label="Scrollable research figure"><img src="assets/assistance.svg" alt="Raw49 of192, execution tables64 of192, proposition tables106 of192 correct." loading="lazy"></div><figcaption>The supported +21.875-point contrast is proposition tables versus execution tables. Information assistance changes the task presented to the model.</figcaption></figure><div class="table-scroll"><table>
+<thead><tr><th scope="col">Recorded configuration</th><th scope="col">Correct / evaluated</th><th scope="col">Accuracy</th></tr></thead><tbody>
+<tr><th scope="row">Raw question</th><td>49 / 192</td><td>25.52%</td></tr>
+<tr><th scope="row">Full execution tables</th><td>64 / 192</td><td>33.33%</td></tr>
+<tr><th scope="row">Eligible roots and proposition truth</th><td>106 / 192</td><td>55.21%</td></tr>
+</tbody></table></div>
+<p>Giving eligible inputs and the exact proposition truth improves 21.875 points over full execution tables: 95% world-cluster interval 11.979–31.25; Holm-six p = 0.0067749. Full execution tables improve 7.8125 points over raw questions, but adjusted p = 0.2714844. Explicit ALL_TRUE/ALL_FALSE/MIXED vocabulary has no uniform benefit: it hurts raw questions by 9.375 points and helps proposition-assisted questions by 10.4167 points; the interaction is +19.7917 points, interval 10.4167–30.2083, adjusted p = 0.0152588.</p>
+<p>The main factorial crosses causal/program wording, three information levels and two label vocabularies. Every output completes with a legal answer code. In the 192 proposition-table responses, 86 wrong labels are accompanied by false claims about the supplied truth bits. The raw conditions score 0 / 16 on NO-oracle queries in each condition; the standard-label outputs always say YES on those queries.</p>
+<h3>The follow-up controls retained both gains and null results</h3>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Study / change</th><th scope="col">Correct counts</th><th scope="col">Estimated change</th><th scope="col">95% interval in points</th><th scope="col">Adjusted inference</th></tr></thead><tbody>
+<tr><th scope="row">Add all-root target-truth vector</th><td>T only 23 / 48; neither 17 / 48; both 22 / 48; membership only 11 / 48</td><td>T main effect +17.7083</td><td>[8.3333, 28.125]</td><td>Holm-three p = 0.03808594</td></tr>
+<tr><th scope="row">Delete context but retain eligible truth table</th><td>Full 53 / 96; minimal 49 / 96</td><td>−4.1667</td><td>[−15.625, 7.2917]</td><td>All three adjusted p = 1</td></tr>
+<tr><th scope="row">Remove irrelevant input columns</th><td>Retained 53 / 72; removed 66 / 72</td><td>+18.0556</td><td>[6.9444, 29.1667]</td><td>Holm-three p = 0.046875</td></tr>
+<tr><th scope="row">Add redundant input extensions</th><td>Projected definite uncertainty 5 / 24 → 1 / 24</td><td>Opposite to intended prediction</td><td>No supported reversed effect</td><td>Adjusted p = 0.25; interaction p = 1</td></tr>
+</tbody></table></div>
+<p>The membership-vector effect is −7.2917 points and its interaction with target truth +10.4167 points; both adjusted p = 0.431640625. A null membership effect does not prove evidence selection was already correct. The target-truth intervention includes polarity and comparison formation, so its benefit is not purely arithmetic.</p>
+<p>Removing context increases uncertainty answers from 50 / 96 to 77 / 96: mixed cases improve 20 / 32 → 31 / 32, but definite cases fall 33 / 64 → 18 / 64. Removing input columns has 15 repairs and two harms. All 36 projected explicit-label cases are correct, a ceiling on this small constructed set rather than a general solution.</p>
+<details class="results-detail"><summary>Local-study inventory, runtime and failed explanation tests</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Local study</th><th scope="col">Scored responses</th><th scope="col">Correct, pooled across conditions</th></tr></thead><tbody>
+<tr><th scope="row">Main factorial</th><td>576</td><td>219</td></tr>
+<tr><th scope="row">Selection vectors</th><td>192</td><td>73</td></tr>
+<tr><th scope="row">Context deletion</th><td>192</td><td>102</td></tr>
+<tr><th scope="row">Multiplicity / projection</th><td>144</td><td>119</td></tr>
+</tbody></table></div>
+<p>Those pooled totals are integrity checks, not scores on one common benchmark. Another 144 pilot outputs and one setup generation bring the local generation inventory to 1,249. Qwen3 used nonthinking llama.cpp Vulkan decoding, context 4,096, 512 new tokens, temperature 0.7, top-p 0.8, top-k 20 and presence penalty 1.5. The main and selection designs precede main outcomes; context and multiplicity follow-ups are adaptive. Corrections apply within each study rather than globally across all hypotheses.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Retrospective explanation test</th><th scope="col">Outcome</th><th scope="col">Scope</th></tr></thead><tbody>
+<tr><th scope="row">Candidate-algorithm mixtures</th><td>0 / 24 superiority comparisons pass; adjusted conjunction p = 1</td><td>1,152 development and 1,152 validation responses</td></tr>
+<tr><th scope="row">Transfer to saved perturbation responses</th><td>0 / 12 comparisons pass</td><td>288 existing surface/mechanism responses</td></tr>
+<tr><th scope="row">Computational versus semantic features</th><td>0 / 8 focal superiority tests pass; 0 / 2 causal-to-program transports pass</td><td>1,632 frozen validation predictions</td></tr>
+<tr><th scope="row">Gemini mixture example</th><td>Validation log loss 1.1180 versus 0.8117 for the simpler mixture</td><td>More complex explanation overfits</td></tr>
+<tr><th scope="row">Gemini perturbation validation</th><td>17 / 24 surface; 11 / 24 mechanism edits</td><td>Nano 24 / 24 and 22 / 24; four other endpoints perfect</td></tr>
+</tbody></table></div>
+<p>Independent evaluators agree on all 384 feature tasks, with features unchanged across 320 equivalent core/surface records. Four endpoints have perfect 48 / 48 validation in all four conditions, leaving 16 error-free cells unable to identify a failure mechanism. These nulls reject the tested superiority criteria without proving that no alternative explanation could work.</p>
+</details>
+<details class="results-detail"><summary>Proof-checking contrasts and the small witness-based repair</summary>
+<p>Nano has seven wrong contract declarations: five have exact original counts and valid opposing witnesses, and four also have full faithful specifications. Gemini has 61 wrong declarations, including 50 faithful specifications; none of those 50 has correct original counts. It falsely claims unanimity on 30 / 32 mixed questions, and none of those count-and-label signatures matches a discriminating frozen candidate algorithm.</p>
+<p>On the reserved 48-question subset, Gemini declines from 32 / 48 brief and 39 / 48 generic reasoning to 14 / 48 contracts. Contract-minus-brief is −37.5 points (adjusted p = 0.0156555); contract-minus-generic is −52.0833 (p = 0.00012207). Proof requirements, structure and formalization change together.</p>
+<p>A narrow checker verifies two supplied opposite witnesses against the original question. It repairs three of Nano’s seven errors and harms none: one validation and two development cases. It repairs no Gemini case. Model-reported proof counts match original tasks in 483 / 576 objects, strict emitted execution in 464 / 544 executable objects and operation-aware execution in 481 / 563. These denominators describe different checks.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 46–50.</p>
+</section>
+<section class="chapter" id="jinesis-scoring"><div class="section-label">08 · Jinesis measurement audit</div><h2>The scoring rule changed what “accepted” meant</h2>
+<p>The independent Jinesis archive audit applies several declared relations to saved formalizer outputs. Exact syntax, numerical equality on the reference-valid domain, equality with matching defined domains, and sign agreement are distinct checks. A stricter negative is a policy transition, not automatically a human-verified historical error.</p>
+<p class="source-note">This was an offline archive audit, with no new model outputs. Its protocol excludes the partial GPT-5.5 archive and cannot pin the exact upstream revision. A mixed training file overlaps 8,750 question IDs; ID overlap alone does not establish shared lineage or training contamination. Report, p. 61.</p><div class="table-scroll"><table>
+<thead><tr><th scope="col">Partition of 11,901 historical accepts</th><th scope="col">Count</th><th scope="col">Share of accepts</th></tr></thead><tbody>
+<tr><th scope="row">Historical positives also directed-positive</th><td>8,939</td><td>75.11%</td></tr>
+<tr><th scope="row">Parsed but directed-negative</th><td>2,885</td><td>24.24%</td></tr>
+<tr><th scope="row">Prediction cannot be parsed</th><td>68</td><td>0.57%</td></tr>
+<tr><th scope="row">Reference target ineligible</th><td>9</td><td>0.08%</td></tr>
+</tbody></table></div>
+<p>The full archive contains 13,290 formalizer rows. Of 13,239 eligible rows, 8,948 are directed-positive and 8,890 symmetric-positive: 58 differ. Their evaluated domains are exhaustive for 6,387 rows and bounded for 6,852. Almost all graphs—13,276 / 13,290—come from graph-ID template fallback; only 14 are reconstructed directly from a dataset row. This makes the scoring interpretation conditional on that graph policy.</p>
+<p>The 2,885 parsed historical-accept / directed-negative transitions split into 1,832 missing comparisons, 954 undefined reference-domain cases, 70 other nonequivalences and 29 exclusively sign-only cases. Query completion recovers 1,590 of those transitions; it overlaps these categories. Query-expanded and gold-adapted labels disagree in 0 / 13,239 eligible rows even though their strings differ on all 1,928 doubly adapted rows. The saved evidence shows no unique observed benefit from gold-derived treatment values.</p>
+<h3>Scorer validation on known synthetic cases</h3>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Implemented rule / comparison</th><th scope="col">Applicable held-out cases</th><th scope="col">Positive / negative</th><th scope="col">False positives / negatives</th><th scope="col">Conformance</th></tr></thead><tbody>
+<tr><th scope="row">Exact syntax tree</th><td>1060</td><td>300 / 760</td><td>0 / 0</td><td>100.00%</td></tr>
+<tr><th scope="row">Directed reference domain</th><td>1060</td><td>400 / 660</td><td>0 / 0</td><td>100.00%</td></tr>
+<tr><th scope="row">Symmetric domain</th><td>1060</td><td>380 / 680</td><td>0 / 0</td><td>100.00%</td></tr>
+<tr><th scope="row">Sign only</th><td>1060</td><td>440 / 620</td><td>0 / 0</td><td>100.00%</td></tr>
+<tr><th scope="row">Seven configurations</th><td>1060</td><td>450 / 610</td><td>90 / 40</td><td>87.74%</td></tr>
+<tr><th scope="row">512 configurations</th><td>1060</td><td>400 / 660</td><td>0 / 0</td><td>100.00%</td></tr>
+<tr><th scope="row">Historical gold-assisted mode</th><td>1000</td><td>460 / 540</td><td>100 / 0</td><td>90.00%</td></tr>
+<tr><th scope="row">Historical behavior proxy</th><td>1040</td><td>640 / 400</td><td>280 / 0</td><td>73.08%</td></tr>
+<tr><th scope="row">Directed rule judged against symmetric target</th><td>1060</td><td>400 / 660</td><td>20 / 0</td><td>98.11%</td></tr>
+</tbody></table></div>
+<p>The frozen suite has 1,696 synthetic expressions including 1,060 held-out cases. These conformance results test each rule against its own declared finite target. All 4,240 exhaustive alpha-renaming checks pass; bounded modes have 16 noninvariant paired outcomes from a disclosed lexical-coordinate limitation. Zero-valid-reference cases are rejected rather than accepted vacuously. The historical behavior proxy is a stress diagnostic, not a complete rerun or prevalence estimate.</p>
+<details class="results-detail"><summary>Question access, unrelated traces and pilot comparisons</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Saved contrast</th><th scope="col">Positive condition 1 / condition 0</th><th scope="col">Denominator</th><th scope="col">Difference in points</th><th scope="col">95% target interval</th></tr></thead><tbody>
+<tr><th scope="row">Gemini question-visible / hidden, raw directed</th><td>3,459 / 3,078</td><td>4671</td><td>+8.16</td><td>[+6.81, +9.51]</td></tr>
+<tr><th scope="row">Same, query-completed</th><td>3,838 / 3,703</td><td>4671</td><td>+2.89</td><td>[+1.76, +4.07]</td></tr>
+<tr><th scope="row">Same, gold-adapted</th><td>3,838 / 3,703</td><td>4671</td><td>+2.89</td><td>[+1.73, +4.02]</td></tr>
+<tr><th scope="row">Genuine / unrelated Gemini trace, raw directed</th><td>221 / 125</td><td>300</td><td>+32.00</td><td>[+25.33, +38.67]</td></tr>
+<tr><th scope="row">Opus pilot question-visible / hidden, raw directed</th><td>126 / 84</td><td>188</td><td>+22.34</td><td>[+14.36, +30.32]</td></tr>
+</tbody></table></div>
+<p>Reported Holm p &lt; 0.000001 for each saved contrast within its three-contrast mode family. Historical configuration is incomplete, so these differences do not isolate a pure causal effect of question access.</p>
+<p>The unrelated 300-trace control scores 216 / 300 under historical acceptance, 125 / 300 directed and 124 / 300 exact/symmetric. Query completion increases directed-like acceptance to 185 / 300. Genuine-versus-shuffled cells are 106 both-positive, 115 genuine-only, 19 shuffled-only and 60 neither. The separate rare-query top-up scores 145 / 200 historically but only 13 / 200 strictly. It has a different composition and stays separate. A routing decomposition also records 398 explaining-away accepts beyond canonical equality without asserting all are semantically correct.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 61–62, 67–69.</p>
+</section>
+<section class="chapter" id="weighting-retries"><div class="section-label">09 · Weighting and retries</div><h2>The same archive could change direction under a different question mix</h2>
+<p>Exact Kimi-anchor prompt text yields 8,917 groups from 10,112 IDs, including 366 repeated groups, 1,561 rows in repeated groups and 1,195 extra occurrences. Backdoor questions account for 1,534 repeated-group rows. These are string repetitions rather than proof of contamination. Missing run-specific Sonnet and Opus prompts make the grouping a weighting convention.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Sonnet minus Opus comparison</th><th scope="col">Difference in points</th><th scope="col">95% interval</th><th scope="col">Resampling unit</th></tr></thead><tbody>
+<tr><th scope="row">Equal saved rows</th><td>−0.277</td><td>[−0.862, +0.307]</td><td>10,095 paired targets</td></tr>
+<tr><th scope="row">Equal saved rows, cluster sensitivity</th><td>−0.277</td><td>[−1.129, +0.544]</td><td>8,904 whole prompt clusters</td></tr>
+<tr><th scope="row">Equal exact prompts</th><td>+1.984</td><td>[+1.411, +2.566]</td><td>8,904 prompt groups</td></tr>
+<tr><th scope="row">Equal query families</th><td>−1.036</td><td>[−2.014, −0.076]</td><td>Prompt clusters within 10 fixed query strata</td></tr>
+</tbody></table></div>
+<p>The row-to-prompt shift is +2.261298757204 points: +2.197593726045 from query composition and +0.063705031150 within queries. Different weighting schemes answer different population questions. Missingness bounds for the four rows are respectively [−0.396, −0.227], the same bounds for the cluster sensitivity, [+1.877, +2.030] and [−1.163, −0.990].</p>
+<h3>Fable-labelled results across saved retry states</h3>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Saved state</th><th scope="col">Direct / 10,112</th><th scope="col">CausalCoT / 10,112</th><th scope="col">Net answers</th><th scope="col">Difference in points</th><th scope="col">95% target interval</th><th scope="col">Exact paired p</th></tr></thead><tbody>
+<tr><th scope="row">First attempt</th><td>9551</td><td>9581</td><td>+30</td><td>+0.297</td><td>[+0.069, +0.524]</td><td>0.0113146</td></tr>
+<tr><th scope="row">Last non-retry</th><td>9552</td><td>9581</td><td>+29</td><td>+0.287</td><td>[+0.059, +0.514]</td><td>0.0141179</td></tr>
+<tr><th scope="row">Latest, including adaptive retries</th><td>9555</td><td>9593</td><td>+38</td><td>+0.376</td><td>[+0.168, +0.583]</td><td>0.000597881</td></tr>
+</tbody></table></div>
+<p>The later Jinesis source labels this archive Fable. V1 identifies its corresponding OpenRouter source without authenticating an underlying model and reports different scored counts. The snapshots and scoring states remain separate, rather than being substituted into one universal leaderboard.</p>
+<p>For the latest Fable point, story-cluster interval [−0.185, +1.171] and graph-cluster interval [−0.193, +1.141] cross zero. Coverage is 9,870 both-covered, 32 CausalCoT-only, nine direct-only and 201 neither. Asymmetric coverage contributes 23 of the 38 net correct answers. The latest contrast combines instructions with adaptive retry history.</p>
+<details class="results-detail"><summary>All paired cells, coverage changes and annotation status</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Archive / state</th><th scope="col">Both correct</th><th scope="col">CausalCoT-only correct</th><th scope="col">Direct-only correct</th><th scope="col">Both wrong</th></tr></thead><tbody>
+<tr><th scope="row">Kimi latest</th><td>9414</td><td>123</td><td>152</td><td>423</td></tr>
+<tr><th scope="row">Fable first attempt</th><td>9500</td><td>81</td><td>51</td><td>480</td></tr>
+<tr><th scope="row">Fable last non-retry</th><td>9501</td><td>80</td><td>51</td><td>480</td></tr>
+<tr><th scope="row">Fable latest</th><td>9515</td><td>78</td><td>40</td><td>479</td></tr>
+</tbody></table></div>
+<p>Fable first and last-nonretry coverage cells are 9,856 both-covered, 34 CausalCoT-only, 20 direct-only and 202 neither. Retry selection changes 222 CoT attempts and 236 direct attempts, but only 12 and three normalized answers respectively: all become covered and correct, with no correct-to-wrong transition. Latest empties total 443 responses across 242 IDs, including 411 in a vaccine-lexical subset. Missing stop reasons prevent a verified refusal explanation.</p>
+<p>Within the ten-query Holm family, Kimi deterministic counterfactual is adverse and Fable correlation and marginal differ. No single universal CausalCoT effect follows. An unfinished human handoff contains 240 analysis items plus a disjoint 20-item pilot, with all eight human-label fields blank. Three unblinded Codex reviewers agree unanimously on 41 and by majority on seven of 48 purposive cases; this is agent agreement, not human ground truth.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 63–65, 69–71.</p>
+</section>
+<section class="chapter" id="structured-counterfactuals"><div class="section-label">10 · Structured deterministic execution</div><h2>The structured solver used privileged information</h2>
+<p>The Jinesis deterministic branch executes supplied gold graphs, mechanisms and formal targets. A declared graph-parent rebinding changes one assignment in 294 of 2,244 rows, repairing 60 predictions with no harm: literal execution scores 2,184 / 2,244 and corrected execution 2,244 / 2,244. This does not measure extraction of mechanisms from natural language.</p>
+<p>A later content crosswalk finds 603 unambiguous one-to-one matches with zero gold disagreements. For Kimi and Fable, stored prompts confirm the exact content; other endpoint archives have weaker shared-ID and verified-label links. The subset is post hoc and unweighted.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Method / saved condition</th><th scope="col">Correct / matched targets</th><th scope="col">Accuracy</th><th scope="col">Parsed-answer coverage</th><th scope="col">95% Wilson interval (%)</th></tr></thead><tbody>
+<tr><th scope="row">Structured execution before rebinding</th><td>574 / 603</td><td>95.19%</td><td>603 / 603</td><td>[93.18, 96.63]</td></tr>
+<tr><th scope="row">Structured execution after rebinding</th><td>603 / 603</td><td>100.00%</td><td>603 / 603</td><td>[99.37, 100.00]</td></tr>
+<tr><th scope="row">Always Yes</th><td>290 / 603</td><td>48.09%</td><td>603 / 603</td><td>[44.13, 52.08]</td></tr>
+<tr><th scope="row">Always No</th><td>313 / 603</td><td>51.91%</td><td>603 / 603</td><td>[47.92, 55.87]</td></tr>
+<tr><th scope="row">Action-value heuristic</th><td>399 / 603</td><td>66.17%</td><td>603 / 603</td><td>[62.30, 69.83]</td></tr>
+<tr><th scope="row">Opus archive</th><td>520 / 603</td><td>86.24%</td><td>600 / 603</td><td>[83.26, 88.76]</td></tr>
+<tr><th scope="row">Sonnet archive</th><td>572 / 603</td><td>94.86%</td><td>602 / 603</td><td>[92.80, 96.35]</td></tr>
+<tr><th scope="row">Gemini archive</th><td>449 / 603</td><td>74.46%</td><td>602 / 603</td><td>[70.83, 77.78]</td></tr>
+<tr><th scope="row">Nano archive</th><td>314 / 603</td><td>52.07%</td><td>603 / 603</td><td>[48.09, 56.03]</td></tr>
+<tr><th scope="row">Kimi direct</th><td>532 / 603</td><td>88.23%</td><td>603 / 603</td><td>[85.41, 90.56]</td></tr>
+<tr><th scope="row">Kimi CausalCoT</th><td>505 / 603</td><td>83.75%</td><td>603 / 603</td><td>[80.59, 86.48]</td></tr>
+<tr><th scope="row">Fable-labelled direct</th><td>565 / 603</td><td>93.70%</td><td>586 / 603</td><td>[91.47, 95.37]</td></tr>
+<tr><th scope="row">Fable-labelled CausalCoT</th><td>565 / 603</td><td>93.70%</td><td>586 / 603</td><td>[91.47, 95.37]</td></tr>
+</tbody></table></div>
+<p>A so-called simplified graph-bound baseline is identical to the post-rebinding mechanism map on all 2,244 rows, apart from commutative argument order. It keeps the same gold operators and is not an independent reduced-information baseline. Among 2,004 rows with evidence, 2,816 evidence assignments are all roots and do not overlap interventions; removing direct evidence forcing changes no prediction in this fixed file. That does not validate forcing for arbitrary endogenous evidence.</p>
+<p>The missing and unparsed answers in the 603-target table count as failures. Fable has 603 stored rows but only 586 parsed answers in each condition, so 100% row coverage is not 100% answer coverage. The observed model–solver gap cannot isolate an extraction effect because supplied information and historical collection protocols differ.</p>
+<p class="source-note">Source: research inventory report, pp. 64, 71–72, 77–79.</p>
+</section>
+<section class="chapter" id="causaltrace"><div class="section-label">11 · CausalTrace</div><h2>Correct final answers sometimes had unsupported visible arguments</h2>
+<p>CausalTrace froze a separate Kimi ingestion snapshot and built a stratified annotation set from correct CausalCoT answers. The historical freeze has 20,224 parseable condition records across all 10,112 IDs and 19,102 correct answers (94.4521%); the later Kimi archive has 19,103, so they are not silently treated as identical snapshots.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Supplied annotation result</th><th scope="col">Count in selected sample</th><th scope="col">Weighted rate</th><th scope="col">Approximate 95% interval</th></tr></thead><tbody>
+<tr><th scope="row">Fully valid reasoning</th><td>383 / 420</td><td>90.86%</td><td>—</td></tr>
+<tr><th scope="row">Correct answer, some invalid reasoning</th><td>37 / 420</td><td>9.14%</td><td>7.36–10.97%</td></tr>
+<tr><th scope="row">Correct answer unsupported by a valid argument</th><td>29 / 420</td><td>7.38%</td><td>5.91–9.00%</td></tr>
+<tr><th scope="row">Valid supporting argument plus another invalid stage</th><td>8 / 420</td><td>1.76%</td><td>—</td></tr>
+</tbody></table></div>
+<p>The 420 complete records use 64 sampling strata and supplied weights totaling about 9,536 eligible correct-answer cases, with 2,000 stratified-bootstrap replicates. The intervals describe sampling variability conditional on the supplied annotations; they do not validate annotator accuracy or agreement. A second annotator and adjudication were still planned.</p>
+<details class="results-detail"><summary>Annotation stages, generated contrasts and ingestion debugging</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Stage marked invalid</th><th scope="col">Applicable selected records</th></tr></thead><tbody>
+<tr><th scope="row">Derivation</th><td>35 / 420; weighted 8.69%</td></tr>
+<tr><th scope="row">Graph</th><td>6 / 420</td></tr>
+<tr><th scope="row">Query</th><td>2 / 420</td></tr>
+<tr><th scope="row">Mechanism</th><td>6 / 54</td></tr>
+<tr><th scope="row">Data</th><td>2 / 350</td></tr>
+<tr><th scope="row">Calculation</th><td>0 / 341</td></tr>
+</tbody></table></div>
+<p>Error labels include unsupported assumptions in 28 cases, wrong formula in four, AND/OR reinterpretation in three and counterfactual misreading in two. The different applicable denominators matter. A correct-answer sample cannot estimate errors across all answers or models.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Generated contrast release</th><th scope="col">Items</th><th scope="col">Scored explicit mechanisms</th><th scope="col">Intentionally ambiguous diagnostics</th><th scope="col">AND/OR pairs</th></tr></thead><tbody>
+<tr><th scope="row">Full</th><td>3456</td><td>3072</td><td>384</td><td>1,536: 768 flips and 768 invariances</td></tr>
+<tr><th scope="row">Pilot</th><td>160</td><td>128</td><td>32</td><td>64: 32 flips and 32 invariances</td></tr>
+</tbody></table></div>
+<p>The generated tasks distinguish mechanism edits that can change an answer from paraphrases and premise reordering that preserve it. Ambiguous examples retain candidate AND and OR answers without an official accuracy label. No completed model robustness scores for this contrast set were located; creation is complete, evaluation remains unestablished.</p>
+<p>The first 100-record ingestion smoke test joined all rows but parsed zero answers and found zero reasoning fields. The repaired test parses all 100, scores 99 correct and exposes 100 reasoning fields. This is a software ingestion repair, not a jump from 0% to 99% model capability.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 95–96.</p>
+</section>
+<section class="chapter" id="judge-campaign"><div class="section-label">12 · Exploratory automated trace judging</div><h2>A completed judge run failed its own quality gates</h2>
+<p>The GPT-OSS-120B campaign is documented in a separate report. Its raw campaign packets were not recovered for independent replay. It processed 23,771 frozen visible-trace packets in 48 shards, using 24,506 attempts including 735 validation retries. The conclusions below are judge-derived patterns rather than a validated census of true reasoning errors.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Quality gate / accounting measure</th><th scope="col">Result</th><th scope="col">Required / interpretation</th></tr></thead><tbody>
+<tr><th scope="row">Schema validity</th><td>23,356 / 23,771 (98.25%)</td><td>Passes ≥98%</td></tr>
+<tr><th scope="row">Exact-evidence failure</th><td>735 / 23,771 (3.09%)</td><td>Fails ≤1%</td></tr>
+<tr><th scope="row">Deterministic contradictions</th><td>245 / 23,771 (1.03%)</td><td>Fails zero contradictions</td></tr>
+<tr><th scope="row">Shards passing all gates</th><td>0 / 48</td><td>Production quality fails</td></tr>
+<tr><th scope="row">Reference outcome agreement</th><td>14 / 21 (66.7%)</td><td>Fails ≥19 / 21</td></tr>
+<tr><th scope="row">Reference macro-F1</th><td>0.742</td><td>Fails ≥0.850</td></tr>
+<tr><th scope="row">Exact first-error stage</th><td>3 / 13 (23.1%)</td><td>Fails ≥80%</td></tr>
+<tr><th scope="row">Exact family</th><td>1 / 13 (7.7%)</td><td>Fails ≥75%</td></tr>
+<tr><th scope="row">Exact reference evidence excerpt</th><td>0 / 13</td><td>No exact match</td></tr>
+<tr><th scope="row">Mean reported confidence</th><td>0.9831</td><td>Does not distinguish correct from wrong judgments</td></tr>
+</tbody></table></div>
+<p>Of 22,791 accepted records, 1,898 have insufficient visible reasoning and 20,893 are assessable. Quarantines total 980: 572 repairs that change semantics, 245 contradictions, 162 unresolved shape failures and one finish-status violation. Treating five invalid/missing reference cases as failures is necessary; keeping only 16 accepted cases would inflate agreement to 87.5%.</p>
+<details class="results-detail"><summary>All reported exploratory rates and their limits</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Judge outcome</th><th scope="col">Result</th></tr></thead><tbody>
+<tr><th scope="row">Semantic error among accepted records</th><td>4,281 / 22,791 (18.78%)</td></tr>
+<tr><th scope="row">No error / insufficient</th><td>16,612 / 1,898</td></tr>
+<tr><th scope="row">Error among assessable traces</th><td>4,281 / 20,893 (20.49%)</td></tr>
+<tr><th scope="row">Bookkeeping range with invalid rows assigned clean / erroneous</th><td>18.01–22.13% of all submitted records</td></tr>
+<tr><th scope="row">Flags in correct-answer / incorrect-answer assessable traces</th><td>3,604 / 19,351; 677 / 1,542</td></tr>
+<tr><th scope="row">Wrong answer or judged earlier error</th><td>5,146 / 20,893 (24.63%)</td></tr>
+<tr><th scope="row">Wrong final answer without judge flag</th><td>865</td></tr>
+<tr><th scope="row">Judged error subsequently marked recovered</th><td>269 / 4,281</td></tr>
+</tbody></table></div>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Causal rung / query</th><th scope="col">Judge flags / assessable traces</th></tr></thead><tbody>
+<tr><th scope="row">Association</th><td>700 / 8,634</td></tr>
+<tr><th scope="row">Intervention</th><td>1,140 / 4,783</td></tr>
+<tr><th scope="row">Counterfactual</th><td>2,441 / 7,476</td></tr>
+<tr><th scope="row">Correlation</th><td>265 / 4,035</td></tr>
+<tr><th scope="row">Marginal</th><td>337 / 4,224</td></tr>
+<tr><th scope="row">Explaining away</th><td>98 / 375</td></tr>
+<tr><th scope="row">Collider</th><td>30 / 188</td></tr>
+<tr><th scope="row">ATE</th><td>452 / 2,169</td></tr>
+<tr><th scope="row">Backdoor</th><td>658 / 2,426</td></tr>
+<tr><th scope="row">ETT</th><td>624 / 2,154</td></tr>
+<tr><th scope="row">Deterministic counterfactual</th><td>977 / 2,926</td></tr>
+<tr><th scope="row">NIE</th><td>550 / 1,579</td></tr>
+<tr><th scope="row">NDE</th><td>290 / 817</td></tr>
+</tbody></table></div>
+<p>For 6,893 items with at least two assessable traces, 4,159 are unanimously clean, 420 unanimously flagged and 2,314 mixed. Agreement on 15,784 within-item trace pairs is 75.02%, κ = 0.212; this compares different source traces under one judge, not independent annotators. Among 862 repeatedly flagged items, 322 share the same first-error stage and 185 the same family.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Source trace population</th><th scope="col">Submitted traces</th><th scope="col">Flags / assessable</th></tr></thead><tbody>
+<tr><th scope="row">GPT-5.5</th><td>1662</td><td>439 / 1,396</td></tr>
+<tr><th scope="row">Sonnet</th><td>6284</td><td>1,359 / 5,957</td></tr>
+<tr><th scope="row">Opus</th><td>5497</td><td>1,155 / 5,273</td></tr>
+<tr><th scope="row">Selected forced Opus</th><td>354</td><td>63 / 342</td></tr>
+<tr><th scope="row">Gemini</th><td>9974</td><td>1,265 / 7,925</td></tr>
+</tbody></table></div>
+<p>Gemini has 1,699 insufficient judgments; counting either error or insufficient gives Gemini 30.8%, Sonnet 23.0% and Opus 22.4% of valid records. Unequal coverage and style-sensitive abstention prevent a fair source-model ranking. Invalidity is 8.62% for wrong final answers versus 3.64% for correct ones.</p>
+<p>All 4,281 selected error spans have valid offsets and excerpt lengths; median start is 52% of trace length. Reported recovery is 129 / 1,224 for first-third evidence, 122 / 1,647 for middle-third and 18 / 1,410 for final-third, an early/late risk ratio of 8.26. Evidence position is not independently validated error-onset time. Stage counts include identification 1,639, counterfactual prediction 712 and graph 521; leading families include value/polarity 474 and effect-type confusion 381. These taxonomies remain exploratory.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 65–66.</p>
+</section>
+<section class="chapter" id="october"><div class="section-label">13 · Active evaluation snapshot</div><h2>The October comparison was still incomplete</h2>
+<p>The frozen snapshot was collected on <strong>9 October 2026, 17:55:30–17:55:32 Helsinki time</strong>. It includes saved outputs from a new run that was still growing. Later outcomes are outside the supplied report. This is a point-in-time status record, not a completed benchmark ranking.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Recorded endpoint</th><th scope="col">Correct / saved</th><th scope="col">Saved-output accuracy</th><th scope="col">95% descriptive Wilson interval</th><th scope="col">Planned items not yet saved</th></tr></thead><tbody>
+<tr><th scope="row">Opus 5.5</th><td>7,151 / 7,361</td><td>97.147%</td><td>96.742–97.504%</td><td>2,751</td></tr>
+<tr><th scope="row">GPT-6.1 Sol</th><td>6,600 / 6,995</td><td>94.353%</td><td>93.787–94.870%</td><td>3,117</td></tr>
+</tbody></table></div>
+<p>Both models are planned for all 10,112 items with the same zero-shot prompt convention, medium reasoning effort and an 8,192-token cap. Opus has 7,361 valid completions; Sol has 6,992 valid completions and three terminal API errors counted wrong. Unequal completion coverage means the saved aggregate scores are unmatched. Confidence intervals do not correct missingness, question dependence, benchmark defects or deployment changes.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Recorded endpoint</th><th scope="col">Causal rung</th><th scope="col">Correct / saved</th><th scope="col">Saved-output accuracy</th></tr></thead><tbody>
+<tr><th scope="row">Opus 5.5</th><td>Association</td><td>2,241 / 2,305</td><td>97.223%</td></tr>
+<tr><th scope="row">Opus 5.5</th><td>Intervention</td><td>2,266 / 2,276</td><td>99.561%</td></tr>
+<tr><th scope="row">Opus 5.5</th><td>Counterfactual</td><td>2,644 / 2,780</td><td>95.108%</td></tr>
+<tr><th scope="row">GPT-6.1 Sol</th><td>Association</td><td>2,122 / 2,188</td><td>96.984%</td></tr>
+<tr><th scope="row">GPT-6.1 Sol</th><td>Intervention</td><td>2,111 / 2,174</td><td>97.102%</td></tr>
+<tr><th scope="row">GPT-6.1 Sol</th><td>Counterfactual</td><td>2,367 / 2,633</td><td>89.897%</td></tr>
+</tbody></table></div>
+<p>Among 6,994 common IDs, both are correct on 6,572, only Opus on 219, only Sol on 27 and both wrong on 176. This matched subset is also provisional. All these outcomes score released labels; the known mechanism, mediation and ETT issues have not been independently re-audited in this new campaign.</p>
+<details class="results-detail"><summary>Pilot, visibility and recorded resources</summary>
+<p>The 50-item-per-model pilot scores Opus 47 / 50 and Sol 45 / 50, with no invalid or truncated outputs. It allocates five items to every query type, unlike the full dataset’s weighting. Production reuses those 100 outputs, so the pilot is not an independent replicate.</p>
+<p>Readable returned reasoning is available in 7,355 / 7,361 Opus records. Sol returns reasoning metadata in 6,800 / 6,995 records, with readable text in 4,117 and encrypted segments in those 6,800. Summaries are not the full internal computation, and encrypted segments are not inspectable explanations.</p>
+<p>Recorded output costs sum to $57.90396348 for Opus and $13.21925418 for Sol, excluding some failed-attempt reservations. Pilot known cost is $0.59962518 plus a $0.09412040 failed-batch provision. The pilot’s $107.355238056 full-run projection is an estimate rather than final expenditure. These provisional accounting values are separate from final scientific scores.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 84–87.</p>
+</section>
+<section class="chapter" id="internals"><div class="section-label">14 · Thesis and ARR manuscript evidence</div><h2>Internal measurements suggested patterns, with important limits</h2>
+<p>The thesis and related ARR draft describe a separate Qwen2.5-7B programme using layer-wise answer logits, probes, activation patching, steering and tuning. Raw backing scripts and per-item arrays were not located for this branch. The results are <strong>manuscript-reported</strong>, exploratory and single-seed; they are not the raw-backed Qwen3 factorial studies above.</p>
+<p>The output measure is a one-pass yes/no token-logit comparison, without generated chain of thought. “Early commitment” is the first layer after which the final answer’s sign stays fixed above a 0.10 margin, with early defined as relative depth below 0.55. This is a measurement of answer preference, not proof that the prompt was ignored.</p>
+<h3>Commitment and renaming</h3>
+<p>The full Qwen census reports 3,126 / 10,112 items (30.9%) early at layers 13–14, none at layers 15–21 and the remainder at layers 22–28. Every early answer is Yes. Accuracy is 57.3% early versus 54.2% late. On 1,522 scrambled questions, answers remain unchanged in 96.4% early versus 82.3% late (Fisher p = 2.5 × 10⁻¹⁶). A 200-scramble pilot reports 94% versus 70%. Meaning-preserving renaming should also leave a correct structural solver unchanged.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Reported model configuration</th><th scope="col">Items</th><th scope="col">Answer accuracy</th><th scope="col">Early fraction</th><th scope="col">Early rename invariance</th><th scope="col">Late rename invariance</th></tr></thead><tbody>
+<tr><th scope="row">Qwen2.5-7B base</th><td>600</td><td>53.0%</td><td>0.0%</td><td>—</td><td>89.3%</td></tr>
+<tr><th scope="row">Qwen2.5-7B Instruct</th><td>600</td><td>55.7%</td><td>33.3%</td><td>93.0%</td><td>86.0%</td></tr>
+<tr><th scope="row">Llama3-8B Instruct</th><td>600</td><td>54.3%</td><td>73.7%</td><td>97.2%</td><td>75.6%</td></tr>
+<tr><th scope="row">Gemma2-9B IT</th><td>600</td><td>59.0%</td><td>48.5%</td><td>97.3%</td><td>89.6%</td></tr>
+</tbody></table></div>
+<p>A text-feature classifier predicts the early group at AUC 0.887 ± 0.011. Reported early rates vary by query: correlation 72.9%, explaining-away 62.0%, ATE 49.4%, NIE 48.4%, collider 0.6%, and zero among 1,580 backdoor questions. Base/instruct contrasts also change chat formatting and margin scale; one base counterpart is insufficient to isolate an instruction-tuning effect.</p>
+<details class="results-detail"><summary>Patching, probes and failed activation interventions</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Manuscript experiment</th><th scope="col">Reported result</th><th scope="col">Limit</th></tr></thead><tbody>
+<tr><th scope="row">A: original answers</th><td>55.1%; 179 wrong / 399</td><td>One seed; logit-scored answers</td></tr>
+<tr><th scope="row">Correct-to-wrong transfer probe</th><td>Best 23.5% at layer 1; 1–3% after layer 19</td><td>A failed probe does not prove the answer is absent from every representation</td></tr>
+<tr><th scope="row">Donor residual replacement</th><td>2%, 29%, 85%, 100% wrong-to-right at layers 16, 18, 20, 26</td><td>Patch denominator not displayed; opposite-answer controls ≤2%</td></tr>
+<tr><th scope="row">K: error prediction</th><td>AUROC 0.473 trajectory; 0.483 confidence; 0.471 combined</td><td>These predictors show no useful error ranking in this sample</td></tr>
+<tr><th scope="row">Sign-flip association</th><td>r = −0.011; p = 0.83</td><td>Null association</td></tr>
+<tr><th scope="row">B: six persona directions</th><td>Most accuracy cells within 3 points; all within 7; largest rung-three 54.1% → 47.4%</td><td>No behavior manipulation check</td></tr>
+<tr><th scope="row">C: base/instruct rung-three</th><td>55.6% / 54.1%; layer-19 divergence 1−cosine = 0.129; patch accuracy 48.1%</td><td>Does not isolate suppressed causal computation</td></tr>
+<tr><th scope="row">D: interchange</th><td>47.4% versus 45.9%; p = 0.40</td><td>No reliable transferable computation</td></tr>
+<tr><th scope="row">Rung-two subskill probe</th><td>F1 = 1 from layer 12</td><td>Could separate wording rather than executed reasoning</td></tr>
+</tbody></table></div>
+<p>The attempted activation do-operator uses 80 synthetic stories: 40 direct-path stories and 40 confounded or reverse-causal controls. It injects high/low variable-value directions with both signs. The predicted high-minus-low positive effect on causal stories does not appear.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Injection strength α</th><th scope="col">High-minus-low on causal stories</th><th scope="col">High-minus-low on noncausal controls</th></tr></thead><tbody>
+<tr><th scope="row">2</th><td>-0.034</td><td>0.039</td></tr>
+<tr><th scope="row">4</th><td>-0.028</td><td>0.047</td></tr>
+<tr><th scope="row">8</th><td>-0.068</td><td>0.257</td></tr>
+</tbody></table></div>
+<p>On 200 CLadder intervention questions, high clamps shift p(Yes) by −0.047 and low clamps by +0.259, reversing the intended direction. One-sided tests in the expected direction are near one. A ceiling in direct-effect stories and missing tensors limit diagnosis; this failed intervention does not rule out every possible internal do-operator.</p>
+</details>
+<h3>Fragility and steering</h3>
+<p>Among 9,000 original/renamed items, 4,927 are originally correct: 541 become wrong after renaming and 4,386 remain correct. The final-layer LiReF score predicts that fragility at AUC 0.678 (z = 13.50, p = 8.11 × 10⁻⁴²); layers 0–20 are near chance, about 0.44–0.54. Fragility is reported as 5.0% early versus 16.9% late (Fisher p = 7.2 × 10⁻³⁵). Best-layer selection and no separate held-out item test limit predictive interpretation.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">LiReF intervention</th><th scope="col">Fragile cases rescued</th><th scope="col">Robust cases damaged</th><th scope="col">Interpretation</th></tr></thead><tbody>
+<tr><th scope="row">All layers 0–27, α = 1</th><td>97 / 541 (17.9%)</td><td>4.9% of 4,386 ≈ 215</td><td>Approximate harms exceed rescues</td></tr>
+<tr><th scope="row">Layers 22–27, α = 16</th><td>78 / 541 (14.4%)</td><td>2.1% of 4,386 ≈ 92</td><td>Approximate harms exceed rescues</td></tr>
+</tbody></table></div>
+<p>The highlighted rescue/damage rate ratios of 3.7 and 6.7 use different denominators. Rounded rates imply a small net loss in the originally-correct population for both settings; exact harm counts and outcomes for 4,073 originally wrong items are unavailable. The reported p = 0.0065 compares with corrections among originally wrong items. Selective rescue alone does not establish a pure reasoning-versus-memory causal mechanism.</p>
+<details class="results-detail"><summary>Anticommonsense, QLoRA, subskill and supplementary results</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Manuscript result</th><th scope="col">Reported measurement</th><th scope="col">Limit</th></tr></thead><tbody>
+<tr><th scope="row">Q: 798 anticommonsense questions</th><td>Output 55.5%; probe 70.4% ± 2.7%; 14.9-point gap</td><td>Five-fold separability rather than proof of a hidden mechanism</td></tr>
+<tr><th scope="row">Wrong / right commitment</th><td>Means 18.0 / 17.6; medians 23 / 23</td><td>Similar summaries do not prove equivalent distributions</td></tr>
+<tr><th scope="row">Single-direction ablation</th><td>Best +1.1 points; p = 0.66</td><td>No detected repair</td></tr>
+<tr><th scope="row">PCA-direction ablation</th><td>Best +2.0 points at k = 2; p = 0.42</td><td>Larger interventions can collapse answers</td></tr>
+<tr><th scope="row">PCA adverse cells</th><td>Larger-k narrow-window interventions collapse to No; k = 8 mid-network Yes rate 97.1%</td><td>Failed interventions are retained</td></tr>
+<tr><th scope="row">Reported adapter outputs</th><td>SFT 76.7%; static-LiReF 76.2%; dynamic-LiReF 76.4%; probe about 77.7%</td><td>Training/test disjointness and adapter artifacts not established</td></tr>
+<tr><th scope="row">E: formalization probe F1</th><td>Llama 0.550; Qwen 0.548; Gemma 0.427; other skills 0.70–0.96</td><td>Segment classification does not measure ability to perform the skill</td></tr>
+<tr><th scope="row">E: ID / OOD answer accuracy</th><td>55.5 / 57.0%; 52.0 / 52.5%; 62.0 / 61.0%</td><td>Only three model configurations</td></tr>
+<tr><th scope="row">F: Qwen / R1-distill</th><td>ID/OOD 52.0/52.5% versus 54.0/54.0%; S3 F1 0.548 versus 0.447</td><td>Different checkpoints and no generated reasoning; no isolated RL effect</td></tr>
+<tr><th scope="row">G: Corr2Cause transfer</th><td>Four probes F1 = 0.468; two = 0.997</td><td>Explicitly invalid: segment fallback collapse and possible leakage</td></tr>
+<tr><th scope="row">Causal redirect bridge</th><td>3,000 conversations, S3 projections versus 20 random directions</td><td>Method described; no reported result</td></tr>
+<tr><th scope="row">Production trace audit</th><td>Contradictions 15.6%; answer changes after trace removal 88.0%; pre-thinking predictability 0.1%; p = 2 × 10⁻⁶⁴</td><td>No denominator or raw replay records; contradiction is LLM-judged</td></tr>
+<tr><th scope="row">Reference-model conversation study</th><td>About 30,000 turns; ending 19.7% late versus 18.0% early; p = 0.00018</td><td>Association in a reference model; conversation ending can mean satisfaction or truncation</td></tr>
+</tbody></table></div>
+<p>The QLoRA protocol describes 2,000 training and 500 held-out examples, three epochs, rank 16, alpha 32 and seed 42. The 798 anticommonsense test is not explicitly proved disjoint from training, and regularizer schedules and adapter checkpoints are absent. The LiReF pool uses 30 unique questions per class resampled to 200 draws; 200 is not a count of distinct pool questions.</p>
+<p>Supplementary ending-model coefficients are +0.084 for standardized depth and −2.54 for turn position; early-turn late-minus-early difference is 0.065. The prose also says first/second turns have 40% ending overall while reporting 13.5%/20.0% in exhaustive early/late groups, an unresolved contradiction. Other method discrepancies include two-noun versus all-name scrambling, three-fold versus five-fold probe validation, and 14 stated experiments versus 15 listed labels. Strong causal conclusions require the missing artifacts and reconciled protocols.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 89–93.</p>
+<details><summary>Recorded QLoRA training configuration</summary><p>Qwen2.5-7B-Instruct; four-bit NF4 with bfloat 16 compute; LoRA rank 16, alpha 32 and dropout 0.05; q/k/v/o/gate/up/down projection modules. The manuscript describes 2,000 training examples and 500 held-out evaluation examples, three epochs, batch size 4 with four accumulation steps, learning rate 0.0002 with cosine scheduling and 0.05 warmup, sequence length 1,024, no packing and seed 42. The separate 798-item anticommonsense test is not proved disjoint from the training set. Regularizer formulas, full per-item splits and adapter checkpoints were not recovered, so this configuration does not establish a reproduced held-out result.</p><p class="source-note">Report, p.92.</p></details></section>
+<section class="chapter" id="additional-results"><div class="section-label">15 · Adjacent and historical evidence</div><h2>Other completed work and claims are kept in their own scope</h2>
+<p>These branches belong to the supplied inventory but measure different questions. They complete the record without being merged into CLadder answer scores.</p>
+<details class="results-detail"><summary>CauSciBench and the historical “causal trap” presentation</summary>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">CauSciBench report split</th><th scope="col">Tasks</th><th scope="col">Method selection</th><th scope="col">Effect accuracy</th><th scope="col">Usable numeric coverage</th></tr></thead><tbody>
+<tr><th scope="row">All</th><td>357</td><td>63.6%</td><td>29.3%</td><td>51.8%</td></tr>
+<tr><th scope="row">Synthetic</th><td>143</td><td>69.2%</td><td>45.5%</td><td>64.3%</td></tr>
+<tr><th scope="row">Real</th><td>175</td><td>65.1%</td><td>18.1%</td><td>44.6%</td></tr>
+<tr><th scope="row">QR</th><td>39</td><td>35.9%</td><td>20.1%</td><td>38.5%</td></tr>
+</tbody></table></div>
+<p>These are report-level Fable claims; all task outputs were not independently located and rescored. A historical presentation describes 263 correct-expression/wrong-answer cases and shows the following acceptance rates. Their denominators are not printed in this summary and later audits narrow the interpretation.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Historical slide query</th><th scope="col">Unrelated-trace floor</th><th scope="col">No-question</th><th scope="col">Real trace</th></tr></thead><tbody>
+<tr><th scope="row">Explaining away</th><td>40.0%</td><td>48.0%</td><td>96.8%</td></tr>
+<tr><th scope="row">Marginal</th><td>64.1%</td><td>93.4%</td><td>99.9%</td></tr>
+<tr><th scope="row">Collider bias</th><td>66.7%</td><td>94.2%</td><td>99.3%</td></tr>
+<tr><th scope="row">ATE</th><td>68.7%</td><td>76.6%</td><td>93.2%</td></tr>
+<tr><th scope="row">Correlation</th><td>91.1%</td><td>96.3%</td><td>98.5%</td></tr>
+</tbody></table></div>
+<p>Accepted target-shaped expressions do not show that every failure happened after correct extraction. The later evidence also finds benchmark errors, insufficient information and acceptance of unrelated traces. A note claiming that a final question re-read fixed every polarity error has no linked denominator; its vanilla/prompted/tuned comparison remains a proposed or unquantified claim.</p>
+</details>
+<details class="results-detail"><summary>Persona activation controls: style effects rather than causal-question accuracy</summary>
+<p>A Llama3-8B-Instruct style-control archive contains 196 stored rows totaling 3,920 generations: 14 personas, layer 13, coefficients 4/8/16, and 20 generations per condition cell. Selected settings meet a coherence threshold of 0.8. Lexical proxy scores are below.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Selected condition</th><th scope="col">Lexical proxy score</th><th scope="col">Coefficient</th><th scope="col">Coherence</th></tr></thead><tbody>
+<tr><th scope="row">None</th><td>0.04857</td><td>—</td><td>—</td></tr>
+<tr><th scope="row">Single addition</th><td>0.124</td><td>8</td><td>0.84286</td></tr>
+<tr><th scope="row">Sustained addition</th><td>0.10857</td><td>16</td><td>1.0</td></tr>
+<tr><th scope="row">Norm-preserved addition</th><td>0.108</td><td>8</td><td>0.91429</td></tr>
+<tr><th scope="row">Vocabulary-anchored addition</th><td>0.05714</td><td>16</td><td>1.0</td></tr>
+<tr><th scope="row">Prompt</th><td>0.14229</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+<p>The classification set has 8,400 records, 14 personas and 600 prompts. Layer-4 activation accuracy is 0.925357, prompt control 0.076310 and shuffled control 0.071786, against chance 1/14. Text baselines move from 0.805595 to 0.919762 to 0.925357 as controls improve; the apparent activation advantage shrinks from 0.119762 to 0.005595 to zero. High probe accuracy therefore does not uniquely demonstrate an internal persona representation beyond surface information.</p>
+<p>A separate angular/additive summary uses 25 rows per method and persona. Agreeableness scores are 0.032 for both, conscientiousness zero for both, and politically-conservative lexical means 0.024 additive versus 0.056 angular. These are lexical-style measurements rather than demonstrated causal-reasoning gains.</p>
+</details>
+<details class="results-detail"><summary>Personalization intervention studies and negative pilots</summary>
+<p>A distinct targeted study completes 1,200 local Llama3.1-8B generations with three seeds. A human-study reanalysis uses N = 200: prompt-minus-baseline feeling-heard estimate −0.164, 95% interval [−0.378, 0.050], p = 0.133; condition-by-topic interaction +0.134, interval [−0.299, 0.566], p = 0.545. These show no detected benefit rather than equivalence.</p>
+<p>Magnitude-matched relevant-versus-irrelevant trait edits give an agreeableness lexical signal about 0.015, interval [0.012, 0.017], BH q &lt; 0.001; neuroticism about 0.001, interval [−0.001, 0.004], q = 0.222. Computational interventions and the human deployed system are different protocols.</p>
+<div class="table-scroll"><table>
+<thead><tr><th scope="col">Exploratory pilot</th><th scope="col">Replies</th><th scope="col">Independent unit count</th></tr></thead><tbody>
+<tr><th scope="row">PRISM</th><td>800</td><td>40 participant units</td></tr>
+<tr><th scope="row">Framing</th><td>960</td><td>40 existing contexts</td></tr>
+<tr><th scope="row">Delegated choice</th><td>672</td><td>24 synthetic cases</td></tr>
+<tr><th scope="row">Disclosure</th><td>384</td><td>12 underlying scenarios plus permission variants</td></tr>
+</tbody></table></div>
+<p>All 16 primary pilot comparisons have adjusted intervals including zero. The 2,816 replies are distinct from the 1,200 targeted run and from a later manuscript’s 3,600-response prompt-component design. Repeated seeds and orders are not extra independent people.</p>
+</details>
+<details class="results-detail"><summary>Literature context and unfinished directions</summary>
+<p>The downloaded Caliper paper reports positive original-minus-anonymized gaps in 39 / 40 engaged model/benchmark cells and about a 17-fold collapse on CLadder pseudowords. Those are third-party paper claims, not local reruns. DoVerifier’s original paper claims are likewise kept separate above. Corr2Cause, CauSciBench, causal tutoring and causal-scientist materials provide research context; saved pointers do not establish completed local experiments.</p>
+<p>Unfinished directions include second-annotator adjudication, evaluation of the generated semantic contrasts, completed October scoring, multi-seed commitment tests, matched chat-template and polarity interventions, more base/instruct pairs, free-generated reasoning, BoolQ/StrategyQA and bridge analysis. They are not counted as completed results. Publication drafts, slides, exports and delivery copies describe the same underlying studies rather than multiplying the experiment count.</p>
+</details>
+<p class="source-note">Source: research inventory report, pp. 65, 96–98, 103.</p>
+</section>
+<section class="chapter" id="reading-the-record"><div class="section-label">16 · Closing interpretation</div><h2>What can be said confidently</h2>
+<p>The archive supports a practical conclusion: evaluating causal reasoning requires more than counting final Yes/No matches. First check whether the displayed problem determines the requested answer; then distinguish a target-shaped expression, a faithful executable model, correct execution, valid witnesses and justified answer mapping.</p>
+<p>The strongest checkable findings are the specific benchmark discrepancies, repaired verifier rules, exact solver certificates, declared-answer/execution gaps and bounded local assistance effects. The record also preserves failed hypotheses, incomplete human validation, unreliable judge stages and manuscript-only internal-model claims. None of these studies establishes general real-world causal competence or a complete account of hidden neural computation.</p>
+<p class="source-note">Source: research inventory report, pp. 2, 25, 50, 103.</p>
+</section></div></div><div class="next-page"><p>See how the tests were designed.</p><a class="text-link" href="methods.html">Read the methods</a></div></main><footer class="site-footer"><div class="shell footer-inner"><p>A causal reasoning research archive<br>Evidence snapshot · 9 October 2026</p><p>Answer keys. Explanations. Mechanisms.<br><a href="methods.html#evidence">How to read the evidence</a> · <button class="print-link" data-print>Print this page</button></p></div></footer></body></html>
